@@ -1,6 +1,8 @@
 # Number Systems
 - **Base or Radix**: The *base* or *radix* of a number system equals the number of digits it has. **Decimal** numbers have a base of 10 becasue digits *0* through *9* are used. **Binary** nunmbers have a base of 2 because only the digits *0* and *1* are used. A subscript attached to a number indicates the base of the number. *100<sub>2<sub>* means binary *100*. On the other hand, *100<sub>10</sub>* stands for decimal *100*. Subscript help clarify equations where binary and decimal numbers are mixed. For example, *100001<sub>2</sub>* = *33<sub>10</sub>*.
 
+## Hexadecimal
+
 ### Hexadecimal to Binary to Decimal
 Step 1. Convert *0x97* to *binary*
 

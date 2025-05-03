@@ -35,6 +35,7 @@ Converting a hexadecimal number to Decimal number. Example $A12E_{16}$ to $41262
 
 ### Example of BCD number
 $973_{10}$ to BCD number
+
 $$\begin{array}{ccc}
 9 & 7 & 3 \\
 \downarrow & \downarrow & \downarrow \\

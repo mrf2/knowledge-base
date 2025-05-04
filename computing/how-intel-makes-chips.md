@@ -38,6 +38,18 @@
   Using photolithography, a temporary layer of ***polycrystalline silicon* is created. This becomes a temporary gate electrode.
   ### 3. Insulating the Transistor
   In another oxidation step, a silicon dioxide layer is created over the entire wafer to insulate the transistor from other elements.
-  
-  
+## "Gate-Last" High-k/Metal Gate Formation
+ ### 1. Removing the Temporary Gate
+ The temporary gate electrode and gate dielectric are etched way in preparation for forming the final gate. This procedure is called gate-last.
+ ### 2. Applying High-k Dielectric Material
+ Mutiple layers of ***high-k dielectric material*** are applied to the wafer surface using a method called atomic layer deposition. This material is etched away in some areas, such as the silicon dioxide layer.
+ ### 3. Forming a Metal Gate
+ A metal gate electrode is formed over the wafer and removed from regions other than the gate electrode. This combination of this and the high-k dielectric material imporoves performance and reduces leakage.
+## Metal Deposition
+ ### 1. Preparing to Connect the Transistor
+ Three holes are etched into the insulation layer above the transistor. The holes are filled with copper or another materia that creates metal connections to other transistors.
+ ### 2. Electroplating
+ The wafers are put into a copper sulphate solution. Copper ions are deposited onto the transitors using a process called electroplating.
+ ### 3. After Electroplating
+ Copper ions settle as a thin layer of copper on the transistor surface.
    

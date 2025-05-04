@@ -9,6 +9,7 @@
  ### 3. Monocystalline Silicon Ingot
  The ***silicon ingot*** has a diameter of 300 millimeters (mm) and weighs about 100 kilograms (kg).
 ## Ingot to Wafer
+![Ingot to Wafer](ingot-to-wafer.png)
    ### 1. Slicing Ingots
    The ingot is cut into individual silicon discs called wafers. Each wafer is about one mm thick.
    ### 2. Polishing Wafers

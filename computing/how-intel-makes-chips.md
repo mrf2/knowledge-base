@@ -47,6 +47,7 @@
  ### 3. Forming a Metal Gate
  A metal gate electrode is formed over the wafer and removed from regions other than the gate electrode. This combination of this and the high-k dielectric material imporoves performance and reduces leakage.
 ## Metal Deposition
+![Metal Deposition](metal-deposition.png)
  ### 1. Preparing to Connect the Transistor
  Three holes are etched into the insulation layer above the transistor. The holes are filled with copper or another materia that creates metal connections to other transistors.
  ### 2. Electroplating

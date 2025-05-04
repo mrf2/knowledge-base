@@ -1,5 +1,6 @@
 # How Intel Makes Chips
 ## Sand to Ingot
+![Sand to Ingot](sand-to-ingot.png)
  ### 1. Sand
   Sand has a high percentage of silicon -the starting material for computer chips. Silicon is a ***semiconductor***, meaning that it can be turned into an excellent conductors or insulator of electricity with minor amounts of impurities added.
  ### 2. Melted Silicon

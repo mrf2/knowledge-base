@@ -9,3 +9,7 @@
 |**Sets (Union)**|$\cup$|$\emptyset$|$A \cup \emptyset = A$| Union with empty set doesn't add anything|
 |**Sets (Intersection)**|$\cap$|***U*** (unisersal set)|$A \cap U = A$| Intersection with whole universe doesn't exclude anything|
 
+ - ***0*** is the identity for addition, but **not** for multiplication.
+ - ***1*** is the identity for mulitiplication, but **not** for addition.
+ - $\emptyset$ is the identity for union, but **not** for intersection.
+ - ***U*** is the identity for intersection, but **not** for union

@@ -61,14 +61,14 @@
  ### 3. After Electroplating
  Copper ions settle as a thin layer of copper on the transistor surface.
 ## Metal Layers
-![Metal Layers](images/metal_layers.png)
+![Metal Layers](metal_layers.png)
  ### 1. Polishing
  The excess material is polished off, revealing a specific pattern of copper.
  ### 2. Connecting with Metal Layers
  Like a multi-level highway, metal layers interconnect the transistors in a chip (middle and right images.) The design of the chip determines how he connection are made. Although chips look flat, they can have more than 30 layers of this complex
  circuitry.
 ## Wafer Sort Test and Singulation
-![Wafer Sort Test and Singulation](images/wafer-sort.png)
+![Wafer Sort Test and Singulation](wafer-sort.png)
  ### 1. Sort Testing
  After wafer processing is completed, each chip on a wafer is tested for its functionality.
  ### 2. Slicing Wafers
@@ -76,16 +76,20 @@
  ### 3. Moving to Packaging
  Based on the responses received in the ***wafer sort*** test, die are selected for packaging.
 ## Packaging Die
-![Packaging Die](images/packaging-die.png)
+![Packaging Die](packaging-die.png)
  ### 1. Individual Die
  The individual die which have been cut out in the previous step singulation).
  ### 2. Packaging
  The substrate, the die, and a heat spreader are put together to form a completed processor. The green substrate creates the electrical and mechanical connections so that the processor can interact with the system. The silver-colored heat spreader is a thermal interface that helps dissipate heat.
  ### 3. Completed Processor
 ## Class Testing and Completed Processor
-![Class Testing and Completed Processor](images/completed-processor.png)
+![Class Testing and Completed Processor](completed-processor.png)
  ### 1. Package Testing
- Processors undergo final testing for functionality, performance, and power
+ Processors undergo final testing for functionality, performance, and power.
+ ### 2. Binning
+ Based on the test result of class testing, processors with equal capabilities are binned together in trays, ready for shipment to customers.
+ ### 4. Retail Package
+ The readily manufactured and tested processors either go to system manufacturers in trays (see binning image) or into retail stores in a box such as the on shown here.
  
 
 

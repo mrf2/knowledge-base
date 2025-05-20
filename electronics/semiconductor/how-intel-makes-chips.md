@@ -15,7 +15,7 @@
    ### 2. Polishing Wafers
    The wafers are polished to a flawless, mirror-smooth surface. Intel buys these manufacturing-ready wafers.
 ## Photolithography
-![Photolithography](photolithography.png)
+![Photolithography](images/photolithography.png)
   ### 1. Applying Photoresist
   Photolithography is a process that imprints a specific pattern on the water. It starts by applying a light-sensitive, etch-resistant material called ***photoresist*** onto the wafer surface.
   ### 2. Exposing Photoresist
@@ -35,17 +35,17 @@
   ### 1. Etching
   To create a fin for a tri-gate transistor, Intel applies a hard mask material using photolithography. Then a chemical is applied to ***etch** away unwanted silicon, leaving behind a fin with a layer of hard mask on top.
   ### 2. Removing Hard Mask
-  The hard mask is chemically removed, leaving a tall, thin silicon fin that will contain the ***channel** of a transistor.
+  The hard mask is chemically removed, leaving a tall, thin silicon fin that will contain the ***channel*** of a transistor.
 ## Temporary Gate Formation
-![Temporary Gate Formation](temporary-images/gate-formation.png)
+![Temporary Gate Formation](images/temporary-gate-formation.png)
   ### 1. Creating a Gate Dielectric
   Photoresist is applied to portions of the transistor, and a thin silicon dioxide layer is created by inseting the wafer in an oxygen-filled tube-furnace. This layer becomes a temporary ***gate dielectric***.
   ### 2. Creating a Gate Electrode
-  Using photolithography, a temporary layer of ***polycrystalline silicon* is created. This becomes a temporary gate electrode.
+  Using photolithography, a temporary layer of ***polycrystalline silicon*** is created. This becomes a temporary gate electrode.
   ### 3. Insulating the Transistor
   In another oxidation step, a silicon dioxide layer is created over the entire wafer to insulate the transistor from other elements.
 ## "Gate-Last" High-k/Metal Gate Formation
-!["Gate-Last" High-k/Metal Gate Formation](gate-last-images/high-k.png)
+!["Gate-Last" High-k/Metal Gate Formation](images/gate-last-high-k.png)
  ### 1. Removing the Temporary Gate
  The temporary gate electrode and gate dielectric are etched way in preparation for forming the final gate. This procedure is called gate-last.
  ### 2. Applying High-k Dielectric Material

@@ -14,6 +14,7 @@
 
 ## John the Ripper
 **John the Ripper** is a Password **cracking tool**.
+**Jhon the Ripper:** A well-known password-craking tool, commonly used in penetration testing to identify weak or easily guessable passwords. It can work with password hashes and try dictionary, brute-force, or hybrid attacks.
 
 ## Kismet
 **Kismet** is a **wireless network detection and sniffer tool**. It's used to audit wireless networks by:
@@ -30,6 +31,7 @@ It operates **passively**, so it doesn't send packets - making it great for stea
  - Dangerous files/CGIs
  - Common misconfigurations
  - Known vulnerabilities etc.
+ - **Does not perform passwords strength testing.**
 
 ## Nmap
 **Nmap** is a **network scanning tool** used to find open ports, services and OS fingerprinting.

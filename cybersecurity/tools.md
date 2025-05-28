@@ -10,6 +10,9 @@
 ## Hydra
 **Hydra** is a **brute-force password cracking** tool for services like SSH, FTP, HTTP, etc.
 
+## John the Ripper
+**John the Ripper** is a Password **cracking tool**.
+
 ## Kismet
 **Kismet** is a **wireless network detection and sniffer tool**. It's used to audit wireless networks by:
  - Detecting SSIDs (even hidden ones)
@@ -20,7 +23,11 @@
 It operates **passively**, so it doesn't send packets - making it great for stealthy wireless reconnaissance.
 
 ## Nikto
-**Nikto** is a web server vulnerability scanner. It checks for outdated software, misconfigurations, etc.
+**Nikto** is a web server vulnerability scanner. It checks for:
+ - Outdated software versions
+ - Dangerous files/CGIs
+ - Common misconfigurations
+ - Known vulnerabilities etc.
 
 ## Nmap
 **Nmap** is a **network scanning tool** used to find open ports, services and OS fingerprinting.

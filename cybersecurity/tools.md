@@ -3,6 +3,8 @@
 **Aircrack-ng** is a suit of tools for **auditing wireless networks**
  - **Aircrack-ng** can **capture packets, crack WEP/WPA keys,** and **analyze Wi-Fi traffic**
  - It is especially effective for **penetration testing** of **802.11** networks
+## Burp Suite
+**Burp Suite** - A proxy tool mainly used for **web app security testing** (XSS, SQLi, etc.)
 
 ## Cain & Abel
 **Cain & Abel** is Password recovery tools for Windows. It is also used for sniffing and cracking hashes.
@@ -31,3 +33,6 @@ It operates **passively**, so it doesn't send packets - making it great for stea
 
 ## Nmap
 **Nmap** is a **network scanning tool** used to find open ports, services and OS fingerprinting.
+
+## Wireshark
+**Wireshark** - A powerful **packet analyzer** used to capture, inspect, and analyze network traffic in real time. Vital for troubleshooting and investigating network security.

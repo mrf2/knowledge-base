@@ -4,7 +4,10 @@
  - **Aircrack-ng** can **capture packets, crack WEP/WPA keys,** and **analyze Wi-Fi traffic**
  - It is especially effective for **penetration testing** of **802.11** networks
 ## Burp Suite
-**Burp Suite** - A proxy tool mainly used for **web app security testing** (XSS, SQLi, etc.)
+**Burp Suite** - A proxy tool mainly used for **web app security testing** (XSS, SQLi, etc.). **Burp suite** is a powerful toolset used primarily for **web application security testing**. Its **intercepting proxy** allows penetration testers to:
+ - View and **modify HTTP/HTTPS requests and responses** in real time.
+ - Performing **manual testing** for vulnerabilities like **XSS, SQLi,** and **CSRF.**
+ - Use built-in tools like **Repeater, Intruder**, and **Scanner** for deeper analysis.
 
 ## Cain & Abel
 **Cain & Abel** is Password recovery tools for Windows. It is also used for sniffing and cracking hashes.

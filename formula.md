@@ -4,7 +4,9 @@
  - **Derivation**: A **derivation** is a formula that we can get from other formulas.
 
 > Definition: *A formula invented for a new concept.*
+> 
 > Law: *A formula for a relationship in nature.*
+> 
 > Derivation: *A formula produced with mathematics.*
 
 

@@ -3,6 +3,11 @@
  - **Law**: A **law** is true because we can verifiy it with an experiment.
  - **Derivation**: A **derivation** is a formula that we can get from other formulas.
 
+> Definition: *A formula invented for a new concept.*
+> Law: *A formula for a relationship in nature.*
+> Derivation: *A formula produced with mathematics.*
+
+
 
 ### The Derivation
 Given an equation like this:
@@ -13,7 +18,7 @@ we can add 5 to both sides to get:
 
 y + 5 = 3x + 5
 
-The new equation is true because both side are still equl. There are many other operations like subtraction, multiplication, division, factoring, and substitution that preserve the equality of both sides of the equation. For this reason, we can derive many new formulas using mathematics.
+The new equation is true because both side are still equal. There are many other operations like subtraction, multiplication, division, factoring, and substitution that preserve the equality of both sides of the equation. For this reason, we can derive many new formulas using mathematics.
 
 A **derivation** is *a formula that we can get from other formulas*. This means that we start with on or more formulas and, using mathematics, arrive at a new formula not in our original set of formulas. A derivation is true because mathematics preserves the equality of both sides of every equation between the starting formula and the derived formula.
 

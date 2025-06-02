@@ -36,6 +36,8 @@ It operates **passively**, so it doesn't send packets - making it great for stea
  - Known vulnerabilities etc.
  - **Does not perform passwords strength testing.**
 
+## netstat
+
 ## Nmap
 **Nmap** is a **network scanning tool** used to find open ports, services and OS fingerprinting.
 

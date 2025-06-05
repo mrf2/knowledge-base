@@ -1,0 +1,3 @@
+ - **NetBIOS** is an acronym for Network Basic Input/Output System. It provides services relate to the session layer of the OSI model allowing applications on separate computers to communicate over a local area network. *Windows NETBIOS can be found on port 139.*
+
+ - **SMB** is the acronym for Server Message Block (SMB) is a communication protocol originally developed in 1983 by Barry A. Feigenbaum at IBM and intended to provide share access to files and printers across nodes on a network of systems running IBM's OS/2. It also provieds an authenticated inter-process communication (IPC) mechanism. *SMB can be found on port 445.*

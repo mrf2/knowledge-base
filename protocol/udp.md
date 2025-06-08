@@ -1,0 +1,6 @@
+ - **NetBIOS** is an acronym for Network Basic Input/Output System. It provides services relate to the session layer of the OSI model allowing applications on separate computers to communicate over a local area network. *Windows NETBIOS can be found on port 139.*
+
+ - **SMB** is the acronym for Server Message Block (SMB) is a communication protocol originally developed in 1983 by Barry A. Feigenbaum at IBM and intended to provide share access to files and printers across nodes on a network of systems running IBM's OS/2. It also provieds an authenticated inter-process communication (IPC) mechanism. *SMB can be found on port 445.*
+
+ - **TCP** is the ancronym for Transmission Control Protocol is a connection-oriented protocol requiring a TCP three-way-handshake to establish a connection. TCP provides reliable data transfer, flow control and congestion control. Higher-level protocols such as HTTP, POP3, IMAP and SMTP use TCP
+ - **UDP** is the acronym for the User Datagram Protocol (UDP) is a connectionless protocol; UDP does not require a connection to be established. UDP is suitable for protocols that rely on fast queries, such as DNS, and for protocols that prioritise real-time communications, such as audio/video conferencing and broadcast.

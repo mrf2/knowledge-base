@@ -9,3 +9,10 @@ Nmap (Network Mapper) is a open-source tool used for network discovery and secur
  - `-sV` for *detect the version of services running on the target*
  - `-oA` for *save the nmap results in three major formats at once*
 
+### scripts
+ - To activate all of the scripts in a category
+```bash
+nmap --script=vuln
+```
+
+

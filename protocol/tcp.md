@@ -16,4 +16,4 @@
 |filtered|TCP request sent and receives nothing back. This indicates that the port is beging protected by a firewall.|
 
 
-### [TCP Header] (rfc9293.html#name-header-format)
+### [TCP Header](rfc9293.html)

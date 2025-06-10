@@ -6,14 +6,46 @@ Nmap (Network Mapper) is a open-source tool used for network discovery and secur
  - `-sT` for *TCP Connect scans*
  - `-sS` for *Syn Scan*
  - `-sU` for *UDP Scan*
+ - `-sN` for *NULL Scan*
+ - `-sF` for *FIN Scan*
+ - `-sX` for *Xmas scans*
+ - `-sn` for *ICMP Network Scanning*
  - `-O` for *Operating System (OS) detection*
  - `-sV` for *detect the version of services running on the target*
  - `-oA` for *save the nmap results in three major formats at once*
 
-### scripts
- - To activate all of the scripts in a category
+## Terminology
+ - **NSE** - Nmap Scripting Engine
+
+## scripts
+NSE Scripts are written in the *Lua programming language*.
+ * `safe`: Will not affect
+ * `intrusive`: Not safe: likely to affect the target
+ * `vuln`: Scan for vulnerabilities
+ * `exploit`: Attemp to exploit a vulnerability
+ * `auth`: Attemp to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+ * `brute`: Attempt to bruteforce credentials for running services for further information about the network (e.g. query an SNMP server)
+
+For exhaustive list: [Nmap Scripting Engine: Usage and Examples](https://nmap.org/book/nse-usage.html)
+### To activate all of the scripts in a category
 ```bash
 nmap --script=vuln
+```
+### To run a specific script
+```bash
+nmap --script=\<script-name\>
+```
+For example:
+```bash
+nmap --script=http-fileupload-exploiter
+```
+For running multiple scripts simultaneously:
+```bash
+nmap --script=smb-enum-users,smb-enum-shares
+```
+Script with arguments
+```bash
+nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
 ```
 
 ## SYN scans (`-sS`)
@@ -35,5 +67,25 @@ SYN scans (`-sS`) are used to scan the TCP port-range of a target or targets; ho
 ## UDP Scan (`-sU`)
 Due to the difficulty in identifying wheather a **UDP** port is actually open, **UDP** scans tend to be incredibly slow in comparison to the various TCP scans (in the region of 20 minutes to scan the first 1000 ports with a good connection). For this reason it's usually good practice to run an **Nmap** scan with `--top-ports <number>` enabled. For example, scanning with `nmap -sU --top-ports 20 <target` Will scan the top 20 most commonly used **UDP** ports.
 
+## ICMP Network Scanning (`-sn`)
+The `-sn` switch tells Namp not to scan any ports -- forcing it to rely primariliy on ICMP echo packets (or ARP requests on a local network, if run with sudo or directly as the root user) to identify targets. In addition to the ICMP echo requests, the `-sn` switch will also cause nmap to send a TCP SYN packet to port 443 of the target, as well as a TCP ACK (or TCP SYN if not run as root) packet to port 80 of the target.
+
+## Nmap help
+To access nmap help menu run the following command:
+```bash
+nmap --script-help=\<script-name\>
+```
+
+## Nmap NSE location
+* Nmap NSE location is: `/usr/share/nmap/scripts'
+* Nmap installed database file: `/usr/share/nmap/scripts/script.db`
+
+## Installing Script and Update Database
+ * Go to Script location: `cd /usr/share/nmap/scripts`
+ * Then: `wget https://svn.nmap.org/nmap/scripts/<script-name>.nse`
+ * Update Database: `nmap --script-updatedb`
+ * Now check again the database file: `/usr/share/nmap/scripts/script.db`
+
 > Source: [TryHackMe.com](https://tryhackme.com/room/furthernmap)
+
 

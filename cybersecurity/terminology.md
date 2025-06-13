@@ -1,9 +1,12 @@
 # Terminology
  - **APT** - Advanced Persistent Threat. An Advance Persistent Threat (APT) is a stealthy threat actor, typically a nation or state-sponsored group, which gains unauthorized access to a computer network and remains undectected for an extended period.
+ - **Blue Team** - A blue team comprises cyber security and technology professionals whose aim is to to protect an information system from impending cyber threats by performing and implementing defensive actions.
+ - **C2** - Command and Control (C2) Infrastructure are a set of programs used to communicate with a victim machine. The is comparable to a reverse shell, but is generally more advanced and often communicate via common network protocols, like HTTP, HTTPS, and DNS.
  - **[CVE](https://www.cve.org/)** - Common Vulnerabilities and Exposures. The mission of the CVE Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities. There is one CVE Record for each vulnerability in the catalog. The vulnerabilities arediscovered then assigned and published by organizations from around the world that have partnered with the CVE Program. Partners publish CVE Records to communicate consistent descriptions of vulnerabilities. Information technology and cybersecurity professionals use CVE Records to ensure they are discussing the same issue, and to coordinate their efforts to prioritize and address the vulnerabilities.
  - **IDS** - Intrustion Dectection System. Web Link: https://www.barracuda.com/support/glossary/intrusion-detection-system
  - **OPSEC** - Operational Security is a set of principals and tactics used to attempt to protect the security of an operator or operation. An example of this may be using code names instead of real names, or using proxy to conceal IP address.
  - **PoC** - Proof Of Concept
+ - **PoLP** - Principle of Least Privilege
  - **SOC** - Security Operations Center. A **Security Operations Center (SOC)** is a team of cyber security professionals that monitors the network and its systems to detect malicous cyber secruity events. 
  - **DFIR** - Digital Forensics and Incident Response
  - **SIEM** - Security Information and Event Management. A [**Security Information and Event Management (SIEM)**](siem.md) is a tool to gathers ecurity-related information and events from various sources and presents them in one dashboard.

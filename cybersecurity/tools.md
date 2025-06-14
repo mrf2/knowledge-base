@@ -28,6 +28,9 @@
  - Logging wireless activity
 It operates **passively**, so it doesn't send packets - making it great for stealthy wireless reconnaissance.
 
+## Metasploit
+Metasploit is an open-source penetration testing framework that helps security professionals find and exploit vulnerabilities in computer systems. It includes a database of know vulnerabilities and tools and scripts for exploiting them.
+
 ## Nikto
 **Nikto** is a web server vulnerability scanner. It checks for:
  - Outdated software versions

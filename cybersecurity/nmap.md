@@ -13,6 +13,10 @@ Nmap (Network Mapper) is a open-source tool used for network discovery and secur
  - `-O` for *Operating System (OS) detection*
  - `-sV` for *detect the version of services running on the target*
  - `-oA` for *save the nmap results in three major formats at once*
+ - `-p` for *Port scan*
+ - `-p-` for *scan all ports*
+ - `-Pn` for Disable host discovery and scan for open ports
+ - `-A` for enable OS and verstion detection, script scanning, and traceroute
 SCRIPT SCAN:
   -sC: equivalent to --script=default
 

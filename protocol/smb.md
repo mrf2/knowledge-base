@@ -8,6 +8,25 @@
 * Microsoft Windows operating system since Windows 95 have included client and server **SMB** protol support. Samba, an open source server that supports the SMB protol was released for Unix systems.
 * Typically, there are SMB share drives on a server that can be connected to and used to view or transfer files. SMB can often be a great starting point for an attacker looking to discover sensitive information.
 
+## SMB Client
+We can remotely access the SMB share using the following syntax:
+```bash
+Syntax:
+smbclient //[IP]/[SHARE] -U [USERNAME] -p [PORT]
+
+Example:
+smbclient //10.10.10.15/sharename -U Anonymous -p 445
+```
+
+### SMB Client Command
+|command|meaning|
+|---|---|
+|ls|List files and directories|
+|dir|List files and directories|
+|cd \<directory_name\>|Change directory|
+|get \<file_name\>|Download file|
+
+
 
 
 > Source: https://tryhackme.com/room/networkservices

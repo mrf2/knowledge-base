@@ -1,4 +1,10 @@
 # Telnet
+
+## Connecting to Telnet
+```bash
+Syntax
+telnet <ip_address> <port_number>
+```
 **Getting 200-OK reponse from localhost**
 1. **Open Telnet:**
 ```bash

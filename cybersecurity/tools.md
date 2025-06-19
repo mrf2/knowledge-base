@@ -14,6 +14,26 @@
 
 ## Hydra
 **Hydra** is a **brute-force password cracking** tool for services like SSH, FTP, HTTP, etc.
+**Hydra** is a very fast online password cracking tool, which can perform rapid dictionary attacks against more than 50 Protocols, including *Telnet, RDP, SSH, FTP, HTTP, HTTPS, SMB, several databases* and much more.
+
+### Syntax of Hydra uses
+```bash
+syntax
+hydra -t <conn_num> -l <user_name> -P <path of password directory> -vV <ip_address> <protocol>
+
+example:
+hydra -t 4 -l mike -p /usr/share/wordlists/rockyou.txt -vV 10.10.10.10 ftp
+```
+
+|Command Option|Meaning|
+|---|---|
+|hydra|Hydra program name|
+|-t 4|Number of parallel connections per target|
+|-l \<user\>|Points to the user|
+|-P|Point to the file containg the file of possible passwords|
+|-vV|Sert verbose mode|
+|\<ip_address\>|Target IP address|
+|protocol|Sets the protocol|
 
 ## John the Ripper
 **John the Ripper** is a Password **cracking tool**.

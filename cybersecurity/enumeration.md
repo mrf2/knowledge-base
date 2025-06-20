@@ -1,4 +1,6 @@
 # Enumeration
+**A process which establishes an activity connection to the target hosts to discover potential attack vectors in the system, and the same can be used for further exploitation of the system.** - *Infosec Institute*
+
 **Enumeration** is the process of **activity** connecting to a target system and systematically **extracting detailed information**, such as:
  - Usernames
  - Group memberships
@@ -20,3 +22,28 @@ It's an **active phase** of information gathering but more focused thatn simple 
  - It typcally uses **authenticated or unauthenticated connections** to services.
  - It **sends crafted request** and analyzes responses - this is **not silent** like passive reconnaissance.
  - Enumeration comes after **Reconnaissance**
+
+|Framework|Phase/Tactic|Description|
+|---|---|---|
+|MITRE ATT&CK|Discovery|Internal enumeration of system and network.|
+|Cyber Kill Chain|Reconnaissance|External info gathering before exploitation. If the enumeration is **external** (e.g., passive DNS, Shodan, WHOIS, banner grabbing), it's considered part of reconnaissance.|
+|Cyber Kill Chain|Weaponization or Delivery|If the enumeration is **internal** (e.g., after initial access), such as enumerating domain controllers or SMB shares, it supports later statges but is not explicitly defined as its own phase in the original Kill Chain.|
+
+## Enumeration Tools
+|Name|Purpose|
+|---|---|
+|`nfs-common`|It is important to have this package installed on any machine that uses NFS, either as client or server. It includes programs such as: **lockd, statd, showmount, nfsstat, gssd, idmapd**, and **mount.nfs**.|
+|`nmap`|Port Scanning|
+|`mount`|Mounting NFS shares. Commonly used command `sudo mount -t nfs IP:<share_name> /tmp/mount -nolock`|
+ 
+### Explanation of: sudo mount -t nfs IP:<share_name> /tmp/mount -nolock
+|command/switch/options|Meaning|
+|---|---|
+|sudo|Run as root|
+|mount|Execute mount command|
+|-t nfs|Type of device to mount, then specifying that it's NFS|
+|IP:\<share_name\>|The IP Address of the NFS server, and the name of the share we wish to mount|
+|-nolock|Specfies not to use Network Lock Manager (NLM) Protocol locking|
+
+
+> Resource: https://wiki.wireshark.org/Network_Lock_Manager

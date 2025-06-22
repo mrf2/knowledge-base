@@ -35,6 +35,7 @@ It's an **active phase** of information gathering but more focused thatn simple 
 |`nfs-common`|It is important to have this package installed on any machine that uses NFS, either as client or server. It includes programs such as: **lockd, statd, showmount, nfsstat, gssd, idmapd**, and **mount.nfs**.|
 |`nmap`|Port Scanning|
 |`mount`|Mounting NFS shares. Commonly used command `sudo mount -t nfs IP:<share_name> /tmp/mount -nolock`|
+|smtp-user-enum|Enumeration is performed by inspecting the responses to VRFY, EXPN, and RCPT TO: commands.|
  
 ### Explanation of: sudo mount -t nfs IP:<share_name> /tmp/mount -nolock
 |command/switch/options|Meaning|

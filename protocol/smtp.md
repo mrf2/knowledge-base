@@ -33,4 +33,47 @@ Step-by-step
 ### Limitations: SMTP is *not designed to retrieve or store* email. It **only pushes** message out.
 
 
+### Commands
+|Command|Meaning|How to use|
+|---|---|---|
+|HELO|Identify the sending client's domain name or IP|`HELO mail.domain.com`|
+|EHLO|Extended version of **HELO** that also list server-supported features.|`EHLO mail.domain.com`|
+|MAIL FROM:|Begins the mail transaction; specifies sender email address|`MAIL FROM:<alice@example.com>`|
+|RCPT TO:|Specifies the receipient's email address. Can be used multiple times|`RCPT TO:<bob@example.net>`|
+|DATA|Signals that the message body follows. Ends with a single `.` on a line.|`DATA ... .`|
+|QUIT|Terminates the SMTP session gracefully|`QUIT`|
+|VRFY|Confirming the names of valid users|`VRFY user@domain.com`|
+|EXPN|Expands a mailing list (also usually disabled for privacy)|`EXPN staff`|
+
+
+## SMTP Client
+### Telnet - Talk to an SMTP server manually using telnet
+```bash
+telnet smtp.example.com 25
+```
+
+We can then type command like below:
+```bash
+EHLO outdomain.com
+MAIL FROM:<we@ourdomain.com>
+MAIL TO:<you@yourdoman.com>
+DATA
+Subject: Test Email
+
+This is a test email sent from telnet terminal
+
+QUIT
+```
+
+### openssl s_client
+```bash
+openssl s_client -starttls smtp -connect smtp.gmail.com:587
+
+# example for gmail
+openssl s_client -connect smtp.gmail.com:465 -crlf
+```
+
+
+
 > Resource: https://www.afternerd.com/blog/smtp/
+

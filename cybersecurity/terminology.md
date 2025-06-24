@@ -12,6 +12,7 @@
  - **PoC** - Proof Of Concept
  - **PoLP** - Principle of Least Privilege
  - **SOC** - Security Operations Center. A **Security Operations Center (SOC)** is a team of cyber security professionals that monitors the network and its systems to detect malicous cyber secruity events. 
+ - **REST** - Representational State Transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web (www). REST defines a set of constraints for how the architecture of a distributed, Internet-scale hypermedia system, such as the Web, should behave. The REST architectural style emphasises uniform interfaces, independent deployment of components, the scalability of interactions between them, and creating a layered architecture to promot caching to reduce user perceived latency, enforce security, and encapsulate legacy systems.
  - **DFIR** - Digital Forensics and Incident Response
  - **SIEM** - Security Information and Event Management. A [**Security Information and Event Management (SIEM)**](siem.md) is a tool to gathers ecurity-related information and events from various sources and presents them in one dashboard.
  - **[Snake Oil](https://en.wikipedia.org/wiki/Snake_oil_(cryptography))** In cryptography, **snake oil** is any cryptographic method or product considerd to be bogus or fraudulent. The name derives from *snake oil*, one type of patent medicine widely available in 19th century United States.

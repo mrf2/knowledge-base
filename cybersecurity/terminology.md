@@ -18,3 +18,11 @@
  - **SSO - Single sign-on** is a session and user authentication service that permits a user to use one set of login credentials - for example, a username and password - to access multiple applications. SSO can be used by enterprises, small and midsize organizations, and individuals to ease the management of multiple credentials.
 
  - **TTL** is the acronym for Title To Live. The **TTL** of the record tells your computer when to stop considering the record as being valid -- i.e. when it should request the data again, rather than relying on the cached copy.
+
+|Concept|Definition|Example|
+|---|---|---|
+|Vulneribility|A flaw, weakness, or misconfiguration in software, hardware, or a system that can be exploited by an attacker.|A buffer overflow in a C program due to unchecked user input.|
+|Exploit|A piece of code or method that takes advantage of a vulneribility to cause unintended behavior in a system.|Sending crafted input to a vulnerable server to execute code.|
+|Payload|The part of the exploit that performs the inteded malicious action after successful exploitation.|A reverse shell that connects back to the attacke'r machine. *Shell, backdoor, privilege escalation all are examples of Payload*.|
+|Attack Vector|The path or means by which an attacker gains access to a system or network to exploit a vulnerability.|Phishing email with a malicious attachment, or open port on a server.|
+

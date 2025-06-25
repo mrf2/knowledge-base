@@ -81,6 +81,7 @@ The **HTTP version** shows the protocol version used to communicate between the 
 |300-399|Redirection|These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.|
 |301|Moved Permanently|This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.|
 |302|Found|Similar to **301** permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.|
+|304|Not Modified|The **304 (Not Modified)** status code indicates that a conditional *GET* or *HEAD* request has been received and would have resulted in a *200 (OK)* response if it were not for the fact that the condition evaluated to false.|
 |400-499|Client Errors|Used to inform the client that there was an error with their request.|
 |400|Bad Request|This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.|
 |401|Not Authorised|Currently not allowed to view this resource until authorized with web application, most commonly with a username and password.|

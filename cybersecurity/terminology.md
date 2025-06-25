@@ -20,6 +20,7 @@
  - **SSO - Single sign-on** is a session and user authentication service that permits a user to use one set of login credentials - for example, a username and password - to access multiple applications. SSO can be used by enterprises, small and midsize organizations, and individuals to ease the management of multiple credentials.
 
  - **TTL** is the acronym for Title To Live. The **TTL** of the record tells your computer when to stop considering the record as being valid -- i.e. when it should request the data again, rather than relying on the cached copy.
+ - **Typosquatting** - The **Typosquatting** also known as ***URL hijacking*** is a form of **cybersquatting** where an attacker registers domain names that are ***common misspellings or variations*** of legitimate websites. The goal is to exploit users who make typing errors when entering URLs into their browser.
 
 |Concept|Definition|Example|
 |---|---|---|

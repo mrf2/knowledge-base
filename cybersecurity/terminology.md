@@ -1,4 +1,5 @@
 # Terminology
+ - **API** - API, which stands for ***Application Programming Interface (API)***, is a set of rules and protocols for building software and applications. An **API** allows different software programs to communicate with each other. It defines methods of communication between various components, including the kinds of requests that can be made, how they're made, the data formats that should be used, and conventions to follow.
  - **APT** - Advanced Persistent Threat. An Advance Persistent Threat (APT) is a stealthy threat actor, typically a nation or state-sponsored group, which gains unauthorized access to a computer network and remains undectected for an extended period.
  - **Blue Team** - A blue team comprises cyber security and technology professionals whose aim is to to protect an information system from impending cyber threats by performing and implementing defensive actions.
  - **C2** - Command and Control (C2) Infrastructure are a set of programs used to communicate with a victim machine. The is comparable to a reverse shell, but is generally more advanced and often communicate via common network protocols, like HTTP, HTTPS, and DNS.
@@ -8,6 +9,7 @@
  - **Enumeration** - Enumeration is the process of gathering inform on a target in order to find potential attack vectors and aid in exploitation. This process is essential for an attack to be successful, as wasting time with exploits that either don't work or can crash the system can be a waste of energy. Enumeration can be used to gather usernames, passwords, network information, hostnames, application data, services, or any other information that may be valuable to an attacker.
  - **IDOR** - Insecure Direct Object Reference. IDOR are a type of access control vulnerability that arises when an application uses user-supllied input to access objects directly. The term IDOR was popularized by its appearance in the OFWASP 2007 Top Ten. IDOR falls under the category of Broken Access Control.
  - **IDS** - Intrustion Dectection System. Web Link: https://www.barracuda.com/support/glossary/intrusion-detection-system
+ - **JSON** - **JavaScript Object Notation (JSON)** is an open standard file and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute-value paris and arrays.
  - **OPSEC** - Operational Security is a set of principals and tactics used to attempt to protect the security of an operator or operation. An example of this may be using code names instead of real names, or using proxy to conceal IP address.
  - **Persistance** - Malware often tries to keep a footprint in the system such that it keeps running even after a system restart. This is called persistence. For example, If a malware adds itself to the startup registry keys, it will persist even after a system restart.
  - **PoC** - Proof Of Concept
@@ -21,6 +23,7 @@
 
  - **TTL** is the acronym for Title To Live. The **TTL** of the record tells your computer when to stop considering the record as being valid -- i.e. when it should request the data again, rather than relying on the cached copy.
  - **Typosquatting** - The **Typosquatting** also known as ***URL hijacking*** is a form of **cybersquatting** where an attacker registers domain names that are ***common misspellings or variations*** of legitimate websites. The goal is to exploit users who make typing errors when entering URLs into their browser.
+ - **XML** - **Extensible Markup Language (XML)** is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
 
 |Concept|Definition|Example|
 |---|---|---|

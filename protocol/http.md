@@ -20,11 +20,11 @@ Each message follows a specific format that helps both the user and the server c
 |Type|Meaning|
 |---|---|
 |**Request Line** or **Start Line**|The start line is like the introduction of the message. It tells us what kind of message is being sent - whether it is a request from the user or response from the server. This lines also gives important details about how the message should be handled.|
-|Headers|Headers are made up of key-value pairs that provide extra information about HTTP message. They give instructions to both the client and the server handling the request or response. These headers cover all sort of things, like security, content types, and more, making sure everything goes smoothly in the communication.|
-|Empty Line|The empty line is a little divider that separates the header from the body. It is essential because it shows where the headers stop and where the actual content of the message begins. Without the empty line, the message might get messed up, and the client or server could misinterpret it, causing errors.|
-|Body|The body is where the actual data is stored. In a request, the body might include data the user wants to send to the server (like form data). In a response, it is where the server puts the content that the user requested (like a webpage or API data).|
+|**Headers**|Headers are made up of key-value pairs that provide extra information about HTTP message. They give instructions to both the client and the server handling the request or response. These headers cover all sort of things, like security, content types, and more, making sure everything goes smoothly in the communication.|
+|**Empty Line**|The empty line is a little divider that separates the header from the body. It is essential because it shows where the headers stop and where the actual content of the message begins. Without the empty line, the message might get messed up, and the client or server could misinterpret it, causing errors.|
+|**Body**|The body is where the actual data is stored. In a request, the body might include data the user wants to send to the server (like form data). In a response, it is where the server puts the content that the user requested (like a webpage or API data).|
 
-### Request Line
+## "Request Line" or "Start Line"
 The **request line (or start line)** is the first part of an HTTP request and tells the server what kind of request it is dealing with. It has tree main parts
  1. HTTP method
  2. URL path, and
@@ -92,15 +92,19 @@ The **HTTP version** shows the protocol version used to communicate between the 
 |500|Internal Service Error|The server has encountered some kind of error with the request that it doesn't know how to handle properly.|
 |503|Service Unavailable|This server cannot handle the request as it's either overloaded or down for maintenance.|
 
-## Headers
-### Common Request Headers
-|Name|Meaning|
-|---|---|
-|Host|Some we servers hsot muliple websites, so by providing the host headers select the appropriate one|
-|User-Agent|Software and version number, telling the web server browser's software version, it helps format the website properly for browser and also some elements of HTML, JavaScript, and CSS.|
-|Content-Length|When sending data to a web server such as in a form, the content length tells the web server how much data to expect in the request.|
-|Accept-Encoding|Tells the web server what types of compression methods the browser supports so the data can be made smaller for transmitting over the internet.|
-|Cookie|Data sent to the server to help remember information.|
+## Headers (Message Headers)
+### Request Headers
+Request Headers allow extra information to be conveyed to the web server about the request. 
+**Some Common Request Headers**
+|Name|Meaning|Examples|
+|---|---|---|
+|Host|Some we servers host muliple websites, so by providing the host headers select the appropriate one|`Host:localhost`|
+|User-Agent|Software and version number, telling the web server browser's software version, it helps format the website properly for browser and also some elements of HTML, JavaScript, and CSS.|`User-Agent: Mozilla/5.0`|
+|Referer|Indicates the URL from which the request came from.|`Referer: https://www.example.com/`|
+|Content-Length|When sending data to a web server such as in a form, the content length tells the web server how much data to expect in the request.||
+|Accept-Encoding|Tells the web server what types of compression methods the browser supports so the data can be made smaller for transmitting over the internet.||
+|Cookie|Data sent to the server to help remember information.||
+|Content-Type|Describes what type or format of data is in the request.|`Content-Type: application/json`|
 
 ### Common Response Headers
 |Name|Meaning|
@@ -108,6 +112,83 @@ The **HTTP version** shows the protocol version used to communicate between the 
 |Set-Cookie|Information to store which gets sent back to the web server on each request|
 |Cache-Control|How long to store the content of the response in the browser's cache before it request again.|
 |Content-Encoding|What method has been used to compress the data to make it smaller when sending it over the internet.|
+
+## Body (Message Body)
+### Request Body
+In HTTP request such as POST and PUT, where data is sent to the web server as opposed to requested from the web server, that data is located inside the **HTTP Request Body**. The formatting of the data can take many forms, but some common ones are `URL Encoded`, `Form Data`, `JSON`, or `XML`.
+ * **URL Encoded (application/x-www-form-urlencoded)**: A format where data is structured in pairs of key and value where (`key=value`). Multiple pairs are seperated by an (`&`) symbol, such as `key1=value1&key2=value2`. Special characters are percent-encoded.
+
+```bash
+Example
+------------------------------
+POST /profile HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+name=username&age=42&country=CN
+```
+
+ * **Form Data (multipart/form-data)**: Allows multiple data blocks to be sent where each block is separated by a boundary string. The boundary string is the defined header of the request itself. This type of formatting can be used to send binary data, such as when uploading files or images to a web server.
+
+```bash
+Example
+------------------------------
+POST /upload HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Content-Type: multipart/form-data; boundary=---WebkitFormBoundary<string>
+
+---WebkitFormBoundary<string>
+Content-Disposition: form-data, name="username"
+
+username
+---WebkitFormBoundary<string>
+Content-Disposition: form-data; name="profile_pic", filename="username.jpg"
+Content-Type: image/jpeg
+
+[Binary Data Here representing the image]
+---WebkitFormBoundary<string>--
+```
+ * **JSON (application/json)**: In this format, the data can be sent using JSON (JavaScript Object Notation) structure. Data is formatted in pairs of `name:value`. Mutiple pairs are separated by commas, all contained within curly braces {}.
+
+```bash
+Example
+------------------------------
+POST /api/user HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Content-Type: application/json
+Content-Length: 62
+
+{
+    "name": "username",
+    "age": 42,
+    "country": "CN"
+}
+```
+
+ * **XML (application/xml)**: In XML formatting, data is structured inside labels called tags, which have an opening and closing. These labels can be nested within each other. In the example below the opening and closing of the tags to send details about a user called username.
+
+```bash
+Example
+------------------------------
+POST /api/user HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0
+Content-Type: application/xml
+Content-Length: 80
+
+<user>
+    <name>username</name>
+    <age>42</age>
+    <country>CN</country>
+</user>
+```
+
+## 2. HTTP Responses
+When we interact with a web application, the server sends back an **HTTP response** to let us know whether our request was successful or somethng went wrong. These responses include a ***status code*** and a short explanation (called the **Reason Phrase**) that gives insigh into how the server handled our request.
 
 ## Interacting with HTTP
 ### Connecting through Telnet

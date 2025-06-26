@@ -71,27 +71,6 @@ The **HTTP version** shows the protocol version used to communicate between the 
 |HTTP/2|2015|Introduced features like multiplexing, header compression, and prioritisation for faster performance.|
 |HTTP/3|2022|Built on HTTP/2, but uses a new protocol (QUIC - Quick UDP Internet Connections) for quicker and more secure connections.|
 
-## HTTP Status Codes
-|Code number|Meaning|Description|
-|---|---|---|
-|100-199|Information Response|These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.|
-|200-299|Success|This range of status codes is used to tell the client their request was successful.|
-|200|OK|The request was completed successfully.|
-|201|Created|A resource has been created (for example a new user or new blog post).|
-|300-399|Redirection|These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.|
-|301|Moved Permanently|This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.|
-|302|Found|Similar to **301** permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.|
-|304|Not Modified|The **304 (Not Modified)** status code indicates that a conditional *GET* or *HEAD* request has been received and would have resulted in a *200 (OK)* response if it were not for the fact that the condition evaluated to false.|
-|400-499|Client Errors|Used to inform the client that there was an error with their request.|
-|400|Bad Request|This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.|
-|401|Not Authorised|Currently not allowed to view this resource until authorized with web application, most commonly with a username and password.|
-|403|Forbidden|Do not have permission to view this resource whether logged in or not.|
-|404|Page not found|The page/resource requested does not exist.|
-|405|Method Not Allowed|The resource does not allow this method request, for example, seding a GET request to resource/create-account when it was expecting a POST request instead.|
-|500-599|Server Errors|This is received for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.|
-|500|Internal Service Error|The server has encountered some kind of error with the request that it doesn't know how to handle properly.|
-|503|Service Unavailable|This server cannot handle the request as it's either overloaded or down for maintenance.|
-
 ## Headers (Message Headers)
 ### Request Headers
 Request Headers allow extra information to be conveyed to the web server about the request. 
@@ -189,6 +168,40 @@ Content-Length: 80
 
 ## 2. HTTP Responses
 When we interact with a web application, the server sends back an **HTTP response** to let us know whether our request was successful or somethng went wrong. These responses include a ***status code*** and a short explanation (called the **Reason Phrase**) that gives insigh into how the server handled our request.
+### Status Line
+The first line every HTTP response is called the **Status Line**. It gives us three pieces of info:
+ 1. **HTTP version:** This tells us which version of HTTP is being used.
+ 2. **Status Code:**  A three-digit number showing the outcome of our request.
+ 3. **Reason Phrase:** A short message explaining the status code in human-readable terms.
+
+## 2. HTTP Status Codes and Reason Phrases
+The **Status Code** is the number that tells us if the request succedded or failed, while the **Reason Phrase** explains what happened. These codes fall into five main categories:
+ 1. **Information Responses (100-199):** These codes mean the server has received part of the request and is waiting for the rest. It is a "keep going" signal.
+ 2. **Successfull Responses (200-299):** These codes mean everything worked as expected. The server processed the request and sent back the requested data.
+ 3. **Redirection Messages (300-399):** These codes tell us that the resource we requested has moved to different location, usually providing the new URL.
+ 4. **Client Error Responses (400-499):** These codes indicate a problem with that request. Maybe the URL is wrong, or we are missing some required info, like authentication.
+ 5. **Server Error Responses (500-599):** These codes mean the server encountered an error while trying to fulfil the request. These are usually server-side issues and not the client's fault.
+
+|Code number|Meaning|Description|
+|---|---|---|
+|100-199|Information Response|These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.|
+|200-299|Success|This range of status codes is used to tell the client their request was successful.|
+|200|OK|The request was completed successfully.|
+|201|Created|A resource has been created (for example a new user or new blog post).|
+|300-399|Redirection|These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.|
+|301|Moved Permanently|This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.|
+|302|Found|Similar to **301** permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.|
+|304|Not Modified|The **304 (Not Modified)** status code indicates that a conditional *GET* or *HEAD* request has been received and would have resulted in a *200 (OK)* response if it were not for the fact that the condition evaluated to false.|
+|400-499|Client Errors|Used to inform the client that there was an error with their request.|
+|400|Bad Request|This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.|
+|401|Not Authorised|Currently not allowed to view this resource until authorized with web application, most commonly with a username and password.|
+|403|Forbidden|Do not have permission to view this resource whether logged in or not.|
+|404|Page not found|The page/resource requested does not exist.|
+|405|Method Not Allowed|The resource does not allow this method request, for example, seding a GET request to resource/create-account when it was expecting a POST request instead.|
+|500-599|Server Errors|This is received for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.|
+|500|Internal Service Error|The server has encountered some kind of error with the request that it doesn't know how to handle properly.|
+|503|Service Unavailable|This server cannot handle the request as it's either overloaded or down for maintenance.|
+
 
 ## Interacting with HTTP
 ### Connecting through Telnet

@@ -1,0 +1,54 @@
+# === OS Development/Bootloader ===
+
+# Object files and binaries
+*.o
+*.bin
+*img
+*.iso
+*.elf
+*.map
+
+# Build artifacts
+/build/
+/out/
+/dist/
+*.lst
+*.sym
+
+# Linker and assembler outputs
+*.ld
+*.map
+*.lst
+*.dump
+
+# QEMU log files
+*.log
+*.trace
+*.snap
+
+# gdb configuration
+.gdb_history
+.gdbinit
+.gdb*
+
+# Disk images, boot sectors, etc.
+*.vhd
+*.vmdk
+*.qcow2
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Make
+*.d	# dependency files
+*.cmd	# some Makefiles generate .cmd files
+
+# Debug traces or temp outputs
+trace/
+tmp/
+
+# Virtual Environment
+/home/u2030/notes/knowledge-base/development/python/Flask/__pycache__/
+/home/u2030/notes/knowledge-base/development/python/Flask/pythonvenv

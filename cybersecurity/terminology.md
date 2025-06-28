@@ -10,6 +10,7 @@
  - **IDOR** - Insecure Direct Object Reference. IDOR are a type of access control vulnerability that arises when an application uses user-supllied input to access objects directly. The term IDOR was popularized by its appearance in the OFWASP 2007 Top Ten. IDOR falls under the category of Broken Access Control.
  - **IDS** - Intrustion Dectection System. Web Link: https://www.barracuda.com/support/glossary/intrusion-detection-system
  - **JSON** - **JavaScript Object Notation (JSON)** is an open standard file and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute-value paris and arrays.
+ - **MIME** - **Multipurpose Internet Mail Extension (MIME)** is an Internet standard that extends the format of email messages to support text in character sets other than ASCII, as well as attachments of audio, video, images, and application programs.
  - **OPSEC** - Operational Security is a set of principals and tactics used to attempt to protect the security of an operator or operation. An example of this may be using code names instead of real names, or using proxy to conceal IP address.
  - **Persistance** - Malware often tries to keep a footprint in the system such that it keeps running even after a system restart. This is called persistence. For example, If a malware adds itself to the startup registry keys, it will persist even after a system restart.
  - **PoC** - Proof Of Concept

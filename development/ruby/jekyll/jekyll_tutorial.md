@@ -42,6 +42,7 @@ Let's add first file. Create **index.html** in `root` with the following content
         <h1>Hello World!</h1>
     <body>
 </html>
+```
 
 ---
 ### Build

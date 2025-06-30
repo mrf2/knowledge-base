@@ -46,7 +46,7 @@ Let's add first file. Create **index.html** in `root` with the following content
 
 ---
 ### Build
-***Since Jekyll is a static site generator, it has to build the site before we can view it. The following commands to build you site:
+***Since Jekyll is a static site generator, it has to build the site before we can view it. The following commands to build you site:***
  * `jekyll build` - Builds the site and outputs a static site to a directory called `_site`.
  * `jekyll server` - Does `jekyll build` and runs it on a local web server at `http://localhost:4000`, rebuilding the site any time you make a change.
 

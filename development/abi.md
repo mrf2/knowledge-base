@@ -29,3 +29,49 @@ Here is what an ABI typically includes:
 
 > ***It governs not the source code interface (that is the API) but how compiled machine code works at runtime.***
 
+## Example: x86_64 System V ABI (Linux/Unix)
+Most Linux distros on 64-bit use the **System V AMB64 ABI**. It defines:
+ * First 6 integer/pointer arguments: passed in `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`
+ * Return value in `rax`
+ * Stack grows downward, 16-byte aligned
+ * Callee-saved registers: `rbx`, `rbp`, `r12-r15`
+
+```assembly
+; Example: void foo(int a, int b)
+foo:
+    mov edi, a      ; first arg in rdi
+    mov esi, b      ; second arg in rsi
+    call foo
+```
+```assembly
+; Example: void foo(int a, int b)
+foo:
+    mov edi, a      ; first arg in rdi
+    mov esi, b      ; second arg in rsi
+    call foo
+```
+
+## ABI vs API
+|Aspect|ABI|API|
+|---|---|---|
+|Level|Binary (compiled code)|Source code|
+|Use|Link/load-time, runtime compatibility|Compile-time interface|
+|Changes|Breaks binary compatibility|Break source compatibility|
+|Tools|Linker, loader, debugger|Compiler, headers, IDE|
+
+## Why ABI Matters (especially in Security/Hardening)
+ * **Binary exploitation**: ABI knowledge is critical for buffer overflows, Return-oriented Programming (ROP), shellcode
+ * **Syscalls and kernel**: ABI defines syscall entry points and register conventions
+ * **Library compatibility**: Mismatched ABIs between modules $\rightarrow$ crashes or corruption
+ * **Firmware/emulators**: Must match ABI to real hardware
+ * **Hardening tools**: `ASLR`, `stack canaries` etc. rely on ABI-preserving behavior
+
+## Common ABIs by Platform
+|Platform|ABI|Notes|
+|---|---|---|
+|Linux x86_64|System V AMD64| Most Unix-like OSes|
+|Windows x86_64|Microsoft x64 ABI|Different calling convention|
+|ARM (32-bit)|AAPCS|ARM Architecture Procedure Call Std|
+|ARM64 (AArch64)|AAPCS64|Used in Linux, Android|
+|RISC-V|RISC-V ABI|Newer, designed with simplicity|
+

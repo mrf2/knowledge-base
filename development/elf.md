@@ -56,3 +56,27 @@ int main()
 
 ### How `main()` calls `add()` (simplified):
 #### 1. Arguments `10` and `20` $\rightarrow$ passed via:
+ * `rdi` = 10
+ * `rsi` = 20
+#### 2. Call instruction:
+```asm
+call add
+```
+ * Pushes return address onto the stack (`[rsp]`)
+#### 3. Insdie `add`:
+ * Save `rbp` *(if used)*:
+```asm
+push rbp
+mov rbp, rsp
+```
+ * Do computation:
+```asm
+mov eax, edi        ; a into eax
+add eax, esi        ; eax = a + b
+```
+ * Result in `eax` *(same as * `rax` *)*
+ * Epilogue: 
+```asm
+pop rbp
+ret
+```

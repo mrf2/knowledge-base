@@ -31,4 +31,10 @@ A subdomin sits on the left-hand side of the Second-Level Domain using a period 
  4. The TLD server holds records for where to find the authoritative server to answer the DNS request. The authoriative server is often also known as the nameserver for the domain. For example, the name server for tryhackme.com is kip.ms.cloudflare.com and uma.ns.cloudflare.com. There can be multiple nameservers for a domain name to act as a backup in case one goes down.
  5. An authoritative DNS server is the server that is responsible for storing the DNS records for a particular domain name and where any updates to the domain name DNS records would be made. Depending on the record type, the DNS record is then sent back to the Recursive DNS Server, where a local copy will be cached for future requests and then relayed back to the original client that made the request. DNS records all come with a TTL (Time To Live) value. This value is a number represented in seconds that the response should be saved for locally until it look it up again. Caching saves on having to make a DNS request every time communicate with a server.
 
+## DNS Resolver
+A **DNS Resolver** is any component (software or system) that performs **name resolution**, which includes:
+ * **Stub resolvers** *(on the client machine)*
+ * **Recursive resolvers** *(usually external DNS servers)*
+
+
 > Source: https://tryhackme.com/room/dnsindetail

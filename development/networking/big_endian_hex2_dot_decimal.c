@@ -7,13 +7,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 int main(int argc, char **argv)
 {
 	int a, b, c, d;
 	unsigned int ipaddr;
 	unsigned int ipaddr2;
+	struct in_addr inaddr;			/* address in network byte order */
+	unsigned int addrfnc;			/* addr in host byte order */
 	if (argc != 2) {
  		printf("use: ./ebig_endian_hex2_dot_decimal 128.2.194.242\n");
 	       // printf("argv[0] = %s\n", argv[0]);
@@ -46,6 +50,11 @@ int main(int argc, char **argv)
 	// printf("0x%02x%02x%02x%02x\n", *ptr, *(ptr+1), *(ptr+2), *(ptr+3));
 	printf("Byte hex format for ipaddr: 0x%x\n", ipaddr);
 	printf("Byte hex format for ipaddr2: 0x%x\n", ipaddr2);
+
+	if (inet_aton(argv[1], &inaddr) == 0)
+		perror ("inet_aton error");
+	addrfnc = ntohl(inaddr.s_addr);
+	printf("0x%x\n", addrfnc);
 
 
 	return 0;

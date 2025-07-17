@@ -13,6 +13,9 @@ A reentrant function is one that can be safely invoked concurrently - such as fr
 |Thread-safe by nature|Usually safe to call from multiple threads simultaneously|
 |Interrupt-safe|Can be safely called inside interrupt handlers|
 
+### General Rule for Security+Reentrancy
+**If a C function returns a** `char *` **and we didn't pass in a buffer, we have to check whether it uses static memory or not**.
+
 #### Non-Reentrant Example:
 ```c
 int counter = 0;

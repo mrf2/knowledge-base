@@ -61,5 +61,12 @@ int main(int argc, char **argv)
        /* int atoi(const char *nptr); */
 	port = atoi(argv[2]);
 
-	clientfd = 
+	/* Now fill the server's IP address and port. */
+       /* int socket(int domain, int type, int protocol); */
+
+	if ((clientfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+		return -1;	/* Check error for cause of error */
+
+
+//	clientfd = 
 

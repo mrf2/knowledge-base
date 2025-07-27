@@ -66,6 +66,23 @@ int main(int argc, char **argv)
 
 	if ((clientfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 		return -1;	/* Check error for cause of error */
+       /* [[deprecated]] struct hostent *gethostbyname(const char *name); */
+	if ((hp = gethostbyname(host)) == NULL)
+		return -2;	/* Check h_error for cause of error */
+       /* void bzero(void s[.n], size_t n); */
+	bzero((char *)&serveraddr, sizeof(serveraddr));
+	serveraddr.sin_family = AF_INET;	/* Address Family: Internet */
+       /* [[deprecated]] void bcopy(const void src[.n], void dest[.n], size_t n); */
+	/* char **h_addr_list;		// List of addresses from name server.	*/
+	bcopy((char *)hp->h_addr_list[0], (char *)&serveraddr.sin_addr.s_addr,
+			hp->h_length);
+	serveraddr.port = htons(port);
+
+	/* Establish a connection with the server */
+       /* int connect(int sockfd, const struct sockaddr *addr,
+		   socklen_t addrlen); */
+
+
 
 
 //	clientfd = 

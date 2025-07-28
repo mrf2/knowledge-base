@@ -4,7 +4,11 @@
  * run: ./echo_client
  */
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <netdb.h>
 
 #define	MAXLINE	 8192  /* Max text line length */
 
@@ -67,23 +71,42 @@ int main(int argc, char **argv)
 	if ((clientfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 		return -1;	/* Check error for cause of error */
        /* [[deprecated]] struct hostent *gethostbyname(const char *name); */
-	if ((hp = gethostbyname(host)) == NULL)
+	if ((hostptr = gethostbyname(host)) == NULL)
 		return -2;	/* Check h_error for cause of error */
        /* void bzero(void s[.n], size_t n); */
 	bzero((char *)&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;	/* Address Family: Internet */
        /* [[deprecated]] void bcopy(const void src[.n], void dest[.n], size_t n); */
 	/* char **h_addr_list;		// List of addresses from name server.	*/
-	bcopy((char *)hp->h_addr_list[0], (char *)&serveraddr.sin_addr.s_addr,
-			hp->h_length);
-	serveraddr.port = htons(port);
+	bcopy((char *)hostptr->h_addr_list[0], (char *)&serveraddr.sin_addr.s_addr,
+			hostptr->h_length);
+	serveraddr.sin_port = htons(port);
 
 	/* Establish a connection with the server */
        /* int connect(int sockfd, const struct sockaddr *addr,
 		   socklen_t addrlen); */
+	
+	if (connect(clientfd, (struct sockaddr *)&serveraddr, 
+			sizeof(serveraddr)) < 0)
+		return -1;
+	/*
+	#define RIO_BUFSIZE 8192
+	typedef struct {
+	    int rio_fd;                // descriptor for this internal buf 
+	    int rio_cnt;               // unread bytes in internal buf 
+	    char *rio_bufptr;          // next unread byte in internal buf 
+	    char rio_buf[RIO_BUFSIZE]; // internal buffer 
+	} rio_t; */
 
+	int nread;
+	char RBUF[1023];
 
+	if ((nread = read(clientfd, RBUF, sizeof(100))) < 0)
+		perror("error");
 
+	close(clientfd);
 
-//	clientfd = 
+	return 0;
+}
+
 

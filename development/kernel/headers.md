@@ -29,4 +29,18 @@ The goal of UAPI is to **cleanly separate:**
 #if  __UAPI_DEF_SOCKADDR_IN
 #if __UAPI_DEF_IN_CLASS
 ```
- * `#if  __UAPI_DEF_SOCKADDR_IN` - Can be interpreted as: *In UAPI headers, is the definition of `struct sockaddr_in` enabled?*
+#### `#if  __UAPI_DEF_SOCKADDR_IN`
+The macro can be interpreted as: *In UAPI headers, is the definition of `struct sockaddr_in` enabled?*
+ * Uses Cases: In kernel headers like:
+```c
+#ifdef _UAPI_DEF_SOCKADDR_IN
+
+struct sockaddr_in {
+    ...
+};
+#endif
+```
+
+**This means:**
+ * If `_UAPI_DEF_SOCKADDR_IN` is define to `1`, the kernel **lets userspace see** the struct definition.
+ * If defined to 0, then **glibc must defined it instead** *(to maintain backword compatibility)*.

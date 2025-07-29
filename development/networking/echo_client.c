@@ -100,9 +100,20 @@ int main(int argc, char **argv)
 
 	int nread;
 	char RBUF[1023];
+	/*
+       ssize_t recv(int sockfd, void buf[.len], size_t len,
+			int flags);*/
 
-	if ((nread = read(clientfd, RBUF, sizeof(100))) < 0)
+/*	 if ((nread = read(clientfd, RBUF, 1023) < 0)
 		perror("error");
+	if ((nread = recv(clientfd, RBUF, 1023, 0)) < 0)
+		perror("read socket");
+	printf("%s", RBUF); */
+	while (recv(clientfd, RBUF, 1023, 0) != NULL) {
+		printf("%s\n", RBUF);
+		send(clientfd, RBUF, strlen(RBUF), 0);	
+	}
+		
 
 	close(clientfd);
 

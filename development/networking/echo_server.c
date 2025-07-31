@@ -23,6 +23,14 @@ int main(int argc, char **argv)
 	*/
 
 	/* /usr/include/netinet/in.h
+	 
+	// Internet address.
+	typedef uint32_t in_addr_t;
+	struct in_addr
+	  {
+	    in_addr_t s_addr;
+	  };
+
 	 struct sockaddr_in
 	  {
 	    __SOCKADDR_COMMON (sin_);

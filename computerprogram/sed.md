@@ -22,6 +22,12 @@ sed [options] 'script' [file...]
 |`=`|Print the current line number|
 |`{}`|Group commands|
 
+
+## Examples
+|Case|Command|
+|---|---|
+|Printing specific line numbers|`sed -n '22, 49p' filename.txt`|
+
 ## Single-shot in `sed`
 We can break out of the stream **after the first match ends**, like this
 ```bash

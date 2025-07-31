@@ -21,6 +21,43 @@ The goal of UAPI is to **cleanly separate:**
 |`include/linux/`|Kernel-only internal headers|
 |`include/uapi/linux/`|Headers safe for user-space inclusion (used by `libc`, `gcc`, etc.)|
 
+## General Rule
+ * **User-space program (like `socket()` or `open()`) only need user-space headers**, which live in `/usr/include` and come from:
+   * `glic` (e.g., `stdio.h`, `unistd.h`, `netinet/in.h`)
+   * POSIX or other libraries (e.g., `pthread`, `zlib`, etc.)
+ * **Kernel headers** *(not full kernel source)* are needed only when:
+   * Writing **kernel modules** or **device drivers**
+   * Interfacing directly with **kernel ABI-level structures**
+   * Using **low-level system programming**, e.g., `ioctl`, `netlink`
+
+## Kernel Header vs Library Header
+|Feature|Kernel Header|glibc/Library Header|
+|---|---|---|
+|Location|`/usr/src/linux/`, `/lib/modules/*/build/include/`, or `/usr/include/linux/` from (`linux-libc-dev`)|`/usr/include/`, `/usr/include/bits/`, `/usr/include/glibc/`|
+|Purpose|Defines kernel structs and constants (e.g., `task_struct`, `sockaddr_in`, `ioctl` codes|Provides user-facing interfaces *(standard headers, POSIX types, library functions)*|
+|Installed via|Kernel source or `linux-headers-*` packages|glibc or other library packages|
+|File characteristics|Often begins with `#ifdef __KERNEL__` or uses `__u32`, `__user` types|Uses standard types like `int`, `size_t`, `sockaddr`|
+
+
+## Identify Source
+To see where a header is from:
+```bash
+dpkg -S /usr/include/netinet/in.h
+```
+Which will give us:
+```bash
+libc6-dev:amd64: /usr/include/netinet/in.h
+```
+Or for kernel headers:
+```bash
+dpkg -S /usr/include/linux/in.h
+```
+Gives us:
+```bash
+linux-libc-dev:amd64: /usr/include/linux/in.h
+```
+
+
 ```c 
 #if __UAPI_DEF_IN_IPPROTO
 #if __UAPI_DEF_IN_ADDR

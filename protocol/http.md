@@ -9,7 +9,11 @@ There are two types of HTTP messages:
  2. **HTTP Responses**: Sent by the ***server*** in response to the user's request.
 
 ## 1. HTTP Requests
-Format: `GET /user/login.html HTTP/1.1`
+Format:
+```bash
+<method> <uri> <version>
+```
+Example: `GET /user/login.html HTTP/1.1`
 |Part/Portion|Meaning|
 |---|---|
 |`GET`|HTTP Method|
@@ -74,6 +78,11 @@ The **HTTP version** shows the protocol version used to communicate between the 
 ## Headers (Message Headers)
 ### Request Headers
 Request Headers allow extra information to be conveyed to the web server about the request. 
+Request Header format:
+```bash
+<header name>: <header data>
+```
+
 **Some Common Request Headers**
 |Name|Meaning|Examples|
 |---|---|---|
@@ -86,6 +95,10 @@ Request Headers allow extra information to be conveyed to the web server about t
 |Content-Type|Describes what type or format of data is in the request.|`Content-Type: application/json`|
 
 ### Common Response Headers
+Response line format:
+```bash
+<version> <status code> <status message>
+```
 |Name|Meaning|
 |---|---|
 |Set-Cookie|Information to store which gets sent back to the web server on each request|

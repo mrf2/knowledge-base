@@ -11,4 +11,13 @@ they are useful for reading and writing binary data to and from networks.
 binary data from a file whose contents are cached in an application-level buffer.
 
 ## `IOT` Unbuffered Input and Output Functions
+```c
+/* Application can transfer data directly between memory and a file by calling
+ * iot_nread and iot_nwrite functions.
+ * Returns: number of bytes transferred if OK, 0 on EOF (iot_nread only),
+ * -1 on error
+ * */
 
+ssize_t iot_nread(int fd, void *databuffer, size_t n);
+ssize_t iot_nwrite(int fd, void *databuffer, size_t n);
+```

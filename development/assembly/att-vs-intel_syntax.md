@@ -7,7 +7,7 @@
  2. **Pefixes:**
     * Intel: *no prefixes*
     * AT&T: registers `%`, immediates `$`
- 3. **Memory addressing: `Displacement + base + index\*scale`**
+ 3. **Memory addressing: `Displacement + base + index*scale`**
     * Intel: `[base + index*scale + disp]`
     * AT&T: `dspl(base, index, scale)`
  4. **Sizes:**

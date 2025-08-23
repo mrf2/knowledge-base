@@ -93,3 +93,8 @@ Simplified physical layout of RAM, top-down:
 |Static|`static` or global|Whole program|No (shared)|No (usually)|
 |Stack|Local variables|Per function call|If each thread has its own|Yes|
 |Heap|`malloc()`/`new`|Until `free()`/`delete`|If isolated|Yes|
+
+
+### Resources
+ * [The Memory Layout of a 64-bit Linux Process](https://simonis.github.io/Memory/)
+

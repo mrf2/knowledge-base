@@ -103,7 +103,7 @@ print_hello:                    # Label
  * There's **no return value** (except the implicit `ret` of control flow).
  * In Pascal/Ada this would be called a **procedure**.
  * In assembly manuals we often see this called a **routine**.
-
+---
 ### 3. Interrupt Service Routine (ISR)
 This is where the term ***routine*** dominates in low-level programming.
 
@@ -121,6 +121,12 @@ timer_routine:                  ; hardware calls this on IRQ0
     pop ax
     iret                        ; special return-from-interrupt
 ```
+#### Step-by-Step Explanation
+Let's *dissect line-by-line* the above assembly snippet (`timer_routine` **ISR**). This is typical **x86 real-mode** assembly code that would be used in a bootloader, DOS TSR, or OS kernel to handle the hardware timer interrupt (IRQ0).
+
+ * **`timer_routine:`**
+   * This is a **label** that marks the start of the **Interrupt Service Routine (ISR)**.
+   * The **Programmable Interrupt Controller (PIC)** (Intel 8259) has an **Interrupt Vector Table (IVT)** entry pointing here.
 
 #### Key Point
  * This is **never a function** in the C sense:
@@ -128,7 +134,7 @@ timer_routine:                  ; hardware calls this on IRQ0
    * It doesn't return a value.
    * It's entered by **hardware** (via interrupt vector table), not by `call`
  * That's why it's always called an **Interrupt Service Routine (ISR)**.
-
+---
 ### 4. Startup Routine
 Before **`main()`** even runs in C, our program executes a **startup routine** (provided by `libc` or `crt0`).
 
@@ -143,4 +149,17 @@ _start:                         # Entry point, a routine
  * `_start` is never called by we.
  * It never returns normally (it calls `_exit`).
  * It is not a **function**. It is a **startup routine**.
+
+#### 4. Summary: Why Assembly Programmers Say "Routine"
+|Example|Assembly Behavior|Name used|
+|---|---|---|
+|`int addr(int, int)`|Returns value in register|Function|
+|`void print_hello(void)`|No return value, just side effect|Procedure/Routine|
+|Interrupt handler (`ISR`)|Hardware entry, `iret` return|Routine|
+|`_start` boot entrypoint|No caller, no return|Routine| 
+
+So, in **low-level programming** we say ***routine*** because:
+ * Not everything fits the ***"function returns a value"*** model.
+ * Hardware (*interrupt, reset, syscalls*) invokes code without the high-level function calling convention.
+ * **"Routine"** is the **most generic** word: ***any code block, callable or not, value or not***.
 

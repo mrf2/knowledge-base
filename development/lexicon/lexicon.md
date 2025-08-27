@@ -11,8 +11,8 @@ A **map** of the CPU $\leftrightarrow$ OS $\leftrightarrow$ networking $\leftrig
  * **Historical Note:** where the world originated - often from early OS papers
 
 ## CPU & Execution Context
+ * [**Interrupt** - An asynchronous event from hardware (e.g., *keyboard input, timer ticks*)](interrupt.md)
  * [**Trap** - A synchronous exception caused intentionally be the program (*e.g., system call*)](trap.md)
- * [
 ## Memory & Linking
 
 ## OS & Kernel Mechanisms

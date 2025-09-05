@@ -1,5 +1,10 @@
 # CPU - Processor
 
+## Common terms
+ * **Word:** The term **word** is used to describe the size of the maximum processing unit of the current mode of the CPU.
+   * In 16-bit real mode, a **word** refers to a 16-bit value
+   * In 32-bit protected mode, a **word** refers to a 32-bit value, and so.
+
 
 # Flags
 |Flag|Description|
@@ -14,6 +19,7 @@
 |FGPAT|Page Attribute Table|
 |FPU|Floating-Point Unit on-chip|
 |FXSR|FXSAVE and FXSTOR instruction support|
+|HT|Hyper Threading|
 |MCA|Machine Check Architecture|
 |MCE|Machine Check Exception|
 |MMX|MMX technology support|
@@ -30,6 +36,7 @@
 |SS|Self-snoop|
 |SSE|Streaming SIMD Extensions|
 |SSE2|Streaming SIMD Extensions 2|
+|TM|Thermal monitor|
 |TSC|Time Stamp Counter|
 |TM|Thermal Monitor support|
 |VME|Virtual Mode Extension|

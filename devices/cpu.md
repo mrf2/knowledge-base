@@ -1,12 +1,10 @@
 # CPU - Processor
-
-## Common terms
- * **Word:** The term **word** is used to describe the size of the maximum processing unit of the current mode of the CPU.
-   * In 16-bit real mode, a **word** refers to a 16-bit value
-   * In 32-bit protected mode, a **word** refers to a 32-bit value, and so.
+ * **word**: The term **word** is used to describe the size of the maximum processing unit oof the current mode of the CPU
+   * **16-bit** - In **16-bit** real mode, a **word** referes to a **16-bit** value
+   * **32-bit8** - In **32-bit** protected mode, a **word** referes to a 32-bit value; and so on.
 
 
-# Flags
+## Flags
 |Flag|Description|
 |---|---|
 |ACPI|ACPI Support: Thermal Monitor and Clock Ctrl|

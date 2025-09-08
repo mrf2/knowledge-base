@@ -2,9 +2,10 @@
  * **word**: The term **word** is used to describe the size of the maximum processing unit oof the current mode of the CPU
    * **16-bit** - In **16-bit** real mode, a **word** referes to a **16-bit** value
    * **32-bit8** - In **32-bit** protected mode, a **word** referes to a 32-bit value; and so on.
+ * When we say that a CPU is **16-bit**, we mean that its instructions can work with a maximum of 16-bits at once. For example: *a 16-bit CPU will have a particular instruction that can add two 16-bit numbers together in one CPU cycle; if it was necessary for a process to add together two 32-bit numbers, then it would take more cycles, that make use of 16-bit addition*.
 
 
-## Flags
+# Flags
 |Flag|Description|
 |---|---|
 |ACPI|ACPI Support: Thermal Monitor and Clock Ctrl|

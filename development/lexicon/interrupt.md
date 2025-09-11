@@ -12,6 +12,9 @@
  * After the CPU finds the entry for the interrupt, it jumps to the code the entry points to. This code that is run in response to the interrupt is known as a **Interrupt Service Route (ISR)** or an **Interrupt Handler**.
  * For the system to know which interrupt service routine to call when a certain interrupt occurs, offsets to the **ISR**s are stored in the **Interrupt Descriptor Table** when we'are in **Protected Mode**, or in the **Interrupt Vector Table** when we are in **Real Mode**.
 
+## Interrupt allocation
+**`0x10 - 0x1F`** for **BIOS**
+
 ## Examples
  * Every time we press a key, the  keyboard triggers Interrupt Request 1 (IRQ1), and the corresponding interrupt handler is called.
  * **Timers** and **disk request** completion are other possible sources of **hardware interrupts**.

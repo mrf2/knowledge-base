@@ -19,6 +19,12 @@ A **map** of the CPU $\leftrightarrow$ OS $\leftrightarrow$ networking $\leftrig
 
 ## Networking & Protocol Stack
 
+## Software Layer
+ * [**Firmware**](firmware.md)
+
+## System
+ * [**Embedded System**](embedded-system.md)
+
 ## Toolchain, ABI, Low-Level Libraries & Compiler-Assembly Interface
  * [**Clobbers:** *register/memory/cc*](clobbers.md)
 

@@ -41,3 +41,11 @@
       * Bank 2 $\rightarrow$ serial communication
       * Bank 3 $\rightarrow$ emergency/critical routines
     * *This made cooperative or interrupt-driven multitasking much simpler on the 8051*.
+ 4. **Can all 4 banks be used *simultaneously*?
+    * **No, only one bank is active at a time** for **`R0-R7`** instructions.
+    * But yes, all 4 banks are physically there in RAM **`(0x00 - 0x1F)`**.
+    * We can still access inactive banks **indirectly** using **`@Ri`** addressing or direct addressing (e.g **`MOV 0Ah, #55h`** writes into **Bank 1** even if **Bank 0** is active).
+    * But for normal **`ADD A, R0`** type instructions, only the currently selected bank is visible.
+
+
+**Why four banks?** $\rightarrow$ ***To speed up interrupts, reduce stack uses, and provide flexible context switching.***

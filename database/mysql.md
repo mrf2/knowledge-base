@@ -20,6 +20,12 @@ mysql -u root -p
 # force TCP loopback
 mysql -u root -p -h 127.0.0.1 -P 3306 --protocol=TCP
 
+# specify a socket path explicitly
+mysql -u root -p --socket=/var/run/mysqld/mysqld.sock
+```
+
+***If a program uses `localhost` but needs a TCP connection, we would to change it to `127.0.0.1` or set the client to use TCP.***
+ 
  * Connecting to server
 ```bash
 mysql -h <machine_IP> -u root -p

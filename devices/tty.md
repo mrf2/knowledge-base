@@ -21,3 +21,19 @@ Linux has **two main layers** for terminals:
     * `/dev/pts/0`, `/dev/pts/1`, etc.
     * Created dynamically for things like terminal emulators (`gnome-terminal, `xterm`) or SSH sessions.
     * PTYs are **virtual serial devices** - they simulate a terminal over software.
+
+## Device Hierarchy
+```md
+/dev/
+├─ tty             -> controlling terminal for the process
+├─ tty0            -> current virtual console
+├─ tty1...tty63    -> virtual consoles
+├─ ttyS0...ttyS31  -> real serial ports
+├─ pts/
+   ├─ 0
+   ├─ 1
+   ├─ ...          -> pseudo-terminals
+```
+ * **`ttyS*`**     -> real hardware serial ports
+ * **`pts/*`**     -> pseudo-terminals (emulated serial device for program, Docker, terminal multiplexers, etc.)
+ * **`tty`** (no number)  -> shortcut for **the current terminal of the process** (what **`tty`** command prints).

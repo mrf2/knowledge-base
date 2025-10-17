@@ -5,6 +5,8 @@ The **Docker** platform has two distinct components:
  * **Docker Engine:** The **Docker Engine**, which is responsible for **Creating and Running containers**.
  * **Docker Hub:** The **Docker Hub**, a cloud service for distributing **Containers**.
 
+ * Docker-generated names are a random adjective followed by the name of the famous scientist, engineer, or hacker. We can set the name of the container by using **`--name`** argument (e.g., **`docker run --name BrightMoon debian echo "Bright Moon"`**).
+
 ## **`docker run`** command
  * The **`docker run`** command is responsible for launching containers.
  * Example: `docker run debian echo "Hello World"`
@@ -24,6 +26,15 @@ The **Docker** platform has two distinct components:
 |`--name my-apache`|Assigns a **custom name** to the container. Without this, **Docker** generates a random name (like `elegant_galileo`)|
 |`-p 8080:80`|**Port mapping** - binds port 8080 of host OS \rightarrow$ to `80` port inside the **container**. So, we access it via `http://localhost:8080`|
 |`httpd:alpine`|The **image name and tag**: use the `httpd` (Apache web server) image, with the `alpine` variant (a minimal Linux distro).|
+
+## Command Examples
+|Goal|Command|Meaning|
+|---|---|---|
+|Start the existing container again|`docker start my-apache`|Restarts the same container (without re-creating it).|
+|Remove old container and recreate new one|`docker rm -f my-apache|Deletes the existing container and creates a new one|
+|Use a new name each time|`docker run -dit --name my-apache2 -p 8080:80 httpd:alpine`|Avoids conflict by giving it a new name|
+|See what containers exist|`docker ps -a`|Shows both running and stopped containers.|
+|Run docker with giving a new hostname|`docker run -h CONTAINER -i -t debian /bin/bash`|This time we give a **hostname** with the **`-h`** flag|
 
 ### What Happens Internally
 When we run that container the **first time:**

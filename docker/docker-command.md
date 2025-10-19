@@ -6,6 +6,21 @@
  * **`docker diff <container_name> or <container_id>`**:
    * Example: `docker diff BrightMoon`
 
+## `docker ps`
+
+## `docker inspect`
+The `docker ps -a` commanmd gives us the list of all containers in the host system. The `docker inspect` let us know more information about a container by running `docker inspect` command with the ***name*** or ***ID*** of the container:
+ * `docker inspect BrightMoon`
+   * There is a lot of valuable output here, but it's not exactly easy to parse. We can use **`grep`** or the **`--format`** argument to filter for the information we are intersted in. For example:
+     * **`docker inspect BrightMoon | grep IPAddress`**
+     * **`docker inspect --format {{.NetworkSettings.IPAddress}} BrightMoon`**
+
+### The `docker inspect --format {{.NetworkSettings.IPAddress}} BrightMoon` Command Context:
+When we run this **`docker inspect --format {{.NetworkSettings.IPAddress}} BrightMoon`** command, we're telling Docker: Inspect the container named **`BrightMoon`**, and instead of printing ***everything*** as **JSON**, format the output using this **Go-style template**.
+
+So, the **`--format`** flag lets us control what **`docker inspect`** prints, using **Go's built-in text templating system**.
+
+## `docker diff`
 
 |Command|What It Does|Creates New Containers?|
 |---|---|---|

@@ -21,6 +21,15 @@ When we run this **`docker inspect --format {{.NetworkSettings.IPAddress}} Brigh
 So, the **`--format`** flag lets us control what **`docker inspect`** prints, using **Go's built-in text templating system**.
 
 ## `docker diff`
+The `docker diff` command is used to see the changes have been made in the running container.
+ * **`A`** - File or directory added
+ * **`C`** - File or directory changed
+ * **`D`** - File or directory deleted
+
+### `docker diff` example
+`docker diff BrightMoon`
+
+
 
 |Command|What It Does|Creates New Containers?|
 |---|---|---|

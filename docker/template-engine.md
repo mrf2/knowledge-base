@@ -34,4 +34,11 @@ type Container struct {
 		IPAddress string
 	}
 }
- 2. Docker then parses our template string **`{{.NetworkSettings.IPAddress}}``** using Go's **`text/template`** parser
+```
+ 2. Docker then parses our template string **`{{.NetworkSettings.IPAddress}}``** using Go's **`text/template`** parser.
+ 3. It executes the template against that **Go struct**.
+ 4. It prints the result (the actual IP address string).
+
+## What **`{{.NetworkSettings.IPAddress}}`** Means
+Inside the **`{{ ... }}`** braces:
+ * **`.`** means "the current data object"

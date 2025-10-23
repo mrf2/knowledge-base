@@ -16,6 +16,7 @@ The **Docker** platform has two distinct components:
 ### Syntax with example
  * `docker run -dit --name my-apache -p 8080:80 httpd:alpine`
  * The command explanation as below:
+   
 |Part|Purpose|
 |---|---|
 |`docker`|The **Docker** CLI command itset|

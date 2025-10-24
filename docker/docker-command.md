@@ -5,6 +5,8 @@
    * Example: **`docker inspect BrightMoon`**
  * **`docker diff <container_name> or <container_id>`**:
    * Example: `docker diff BrightMoon`
+ * **`docker logs <container_name> or <container_id>`**:
+   * Example: `docker logs BrightMoon`
 
 ## `docker ps`
 

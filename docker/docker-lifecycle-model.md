@@ -35,6 +35,7 @@ That means:
 That's why `echo hi` container exits immediately - we replaced the main command with something short-lived.
 
 ### How to Reconfigure `docker run` Behavior
+
 #### Per-Container Configuration (Runtime)
 We need to just add flags or a different command at runtime:
 
@@ -46,16 +47,46 @@ We need to just add flags or a different command at runtime:
 |Automatically attach every time|`docker start -ai <container_name>`|Resumes interactively|
 
 ### Inspecting Defaults Behavior
-We can see what defaults are set inside an image:
-```bash
-docker inspect debian | grep -A3 Cmd
-```
 
-We'll get something like:
+#### A container's default behavior (command) is set at creation time
+When we run:
+```bash
+docker run -dit --name mycontainer debian echo "hello world"
+```
+**Docker** does **two things:**
+ 1. Creates a new container from the image **`debian`**
+ 2. Sets its *default command* (called **ENTRYPOINT** and/or **CMD**) to run **`echo hello world`**
+
+**That default command becomes part of that container's** ***immutable configuration***.
+
+ * We can see it along with what defaults are set inside an image:
+```bash
+docker inspect mycontainer | grep -A3 Cmd
+```
+ * We'll get something like:
 ```json
 "Cmd": [
-    "bash"
+    "echo",
+    "hello world"
 ],
 ```
-Here we can see what commands runs when we don't specify one.
+ * When this container stops, **Docker** keeps it with that same command.
+ * So, if we later run:
+```bash
+docker start -ai mycontainer
+```
+ * it will just **re-run `echo hello world`** and exit again - because that's its configured command.
 
+#### Why can't we simply **change** that command?
+Docker **does not allow modifying the command (`Cmd`) of an existing container** directly.
+ * That's because the container's **filesystem layer** and **metadata are** ***frozen*** once created.
+ * Here are some **practical workarounds:**
+   * **Create a new container from the same image:**
+     * `docker run -it --name mycontainer-interactive debian sh`
+   * **Use docker commit --change` to change the default command:**
+     * This one is more advanced and powerful. We can create a new image **while changing its default command:**
+     * `docker commit --change='CMD ["sh"]' mycontainer mycontainer-interactive`
+     * Now when we run: `docker run -it mycontainer-interactive`
+       * it will drop us into a shell prompt.
+       * **✅ Pros:** reuses container's filesystem and sets new default command
+       * **❌ Cons:** doesn't change the old container, but makes a new image version

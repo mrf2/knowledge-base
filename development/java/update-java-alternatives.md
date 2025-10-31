@@ -17,3 +17,17 @@ It updates **all Java-related symbolic links** together:
  * `jconsole`
  * etc.
 So we don't have to manually run `sudo update-alternatives --config java` for each command.
+
+## Location and Integration
+The script lives in:
+```bash
+/usr/sbin/update-java-alternatives
+```
+and it's part of the `java-common` package.
+
+It reads from:
+```bash
+/usr/lib/jvm/.java-*-jinfo
+```
+Each installed JDK/JRE package creates a `.jinfo` file that lists all the binaries (and man pages) associated with that **Java** version.
+

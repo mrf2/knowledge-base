@@ -19,3 +19,12 @@ Here are five core design principles to help explain Astro built
  3. **Fast by default:** It should be impossible to build a slow website in Astro
  4. **Easy to use:** We don't need to be an expert to build something with Astro
  5. **Developer-focused:** We should have the resources we need to be successful
+
+
+## Abbreviation
+ * **SSR** - Server Side Rendering
+
+## Troubleshooting
+ 
+ * **`adpater: netlify()`** -  If the configuration file has the **`output: 'static'** entry, then he Netlify adapter is no need for static sties. The adapter is only needed for SSR (Server-Side Rendering).
+   * **`adapter: netlify()`** $\rightarrow$ Remove this line

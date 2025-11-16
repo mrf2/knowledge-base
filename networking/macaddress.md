@@ -34,4 +34,36 @@ b0 = 0 → unicast
  * **Not OEM-specific**.
  * **Defined by the protocol level (Ethernel standard)**.
  * Any MAC address with **b0=1** is considered *multicast* by the Ethernet controller.
+For example:
+```bash
+01:00:5E:XX:XX:XX --> IPv4 multicast (RFC 1112)
+33:33:XX:XX:XX:XX --> IPv6 multicast (RFC 2464)
+```
 
+These are **not manufacturer OUIs** - they're reserved prefixes managed by standards bodies (IEEE/IANA).
+
+So, multicast addresses are **not burned in** at the factory for devices.
+
+They're typically **generated or used at runtime** by software or the NIC driver when joining multicast groups.
+
+
+### Broadcast (`FF:FF:FF:FF:FF:FF`)
+ * **Not assigned by any manufacturer.**
+ * Defined universally by the **Ethernet protocol itself**.
+ * It's a **special case of a multicast address** (since b0=1)
+
+At the link-layer:
+```bash
+FF:FF:FF:FF:FF:FF
+binary: 11111111 11111111 11111111 11111111 11111111 11111111 
+```
+$\rightarrow$ b0 = 1 $\rightarrow$ Multicast
+$\rightarrow$ All bits = 1 $\rightarrow$  Broadcast to everyone
+
+
+When a NIC sees this address on the wire, the hardware knows:
+> "Deliver this frame to all nodes, regardless of their MAC filter."
+
+This rule is **hardcoded in the Ethernet controller logic**, not configured at boot or assigned by software.
+
+The OS or driver never **"sets"** this address - it's part of the Ethernet standard (IEEE 802.3)

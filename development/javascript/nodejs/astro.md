@@ -20,6 +20,16 @@ Here are five core design principles to help explain Astro built
  4. **Easy to use:** We don't need to be an expert to build something with Astro
  5. **Developer-focused:** We should have the resources we need to be successful
 
+### What are `props`?
+**Props = "properties" passed *into* a component.
+
+They are **input parameters**, exactly like function agruments.
+
+A component is essentially a function:
+```javascript
+Component(props) --> HTML output
+```
+
 
 ## Abbreviation
  * **SSR** - Server Side Rendering

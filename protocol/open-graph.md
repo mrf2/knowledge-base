@@ -20,6 +20,7 @@ Example:
     <meta property="og:url" content="https://example.com/my-content" />
     <meta property="og:type" content="website" />
 </head>
+```
 
 ## Common OG properties
 |Property|Meaning|

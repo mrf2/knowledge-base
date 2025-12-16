@@ -46,3 +46,23 @@ ASCII idea:
 ```bash
 (50, 50) -------------------- (200, 50)
 ```
+
+## 4. Multiple lines = same path
+```xml
+<path d="M 50 50 L 200 50 L 200 150"
+    stroke="black"
+    stroke-width="2"
+    fill="none" />
+```
+
+## 5. Close a shape: `Z`
+```xml
+<path d="M 50 50 L 200 50 L 200 150 L 50 150 Z"
+    stroke="black"
+    stroke-width="2"
+    fill="none" />
+```
+`z` means:
+ * draw a line back to the **starting M point**
+
+This is how **polygons** are made.

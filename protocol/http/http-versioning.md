@@ -37,7 +37,7 @@ There is **no negotiation**.
  * client sends `HTTP/1.1` but server only supports `1.0` $\rightarrow$ error or downgrade behavior
  * client sends nonsense \$rightarrow$ server rejects
 
-#### Keey rule
+#### Key rule
 **In plain HTTP, the client proposes the version unilaterally.**
 
 The server:
@@ -74,3 +74,25 @@ So:
     * `http/1.1` $\rightarrow$ HTTP/1.1
  6. That decision if final for the connection
  7. Only **after that,** HTTP messages begin
+---
+#### Who is reponsible here?
+ * **Client:** advertises supported versions
+ * **Server:** selects one it supports
+
+So the answer is:
+> **Client offers, server chooses.**
+---
+
+#### Version numbers
+ * HTTP/1.0
+ * HTTP/1.1
+ * HTTP/2 (not 2.0 in protocol text)
+ * HTTP/3
+
+## Command-line testing: `telnet` vs `openssl s_client`
+
+### `telnet` - what it can and cannot do
+
+#### What `telnet` CAN do
+ * Open a **raw TCP connection**
+

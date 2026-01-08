@@ -45,3 +45,32 @@ The server:
  * does not netotiate
  * only reacts
 
+### Case B - HTTPS (TLS involved, modern reality)
+This is wheree most confusion happens. 
+
+**For HTTPS, HTTP version selection happens *before* any HTTP message exists.**
+
+So:
+ * no headers yet
+ * no request line yet
+ * no `GET / HTTP/x.y` yet
+---
+**Setp-by-step (actual wire behavior)**:
+ 1. Client opens TCP connection
+ 2. Client starts TLS handshake
+ 3. During TLS handshake, client sends **ALPN (Application-Layer Protocl Negotiation) extension**
+    Example **ALPN** payload:
+    ```sql
+    h2, http/1.1
+    ```
+    Meaing:
+    > "I support HTTP/2 and HTTP/1.1"
+ 4. Server examines:
+    * its own HTTP implementation
+    * its TLS stack
+    * its configuration
+ 5. Server chooses **ONE** protocol:
+    * `h2` $\rightarrow$ HTTP/2
+    * `http/1.1` $\rightarrow$ HTTP/1.1
+ 6. That decision if final for the connection
+ 7. Only **after that,** HTTP messages begin

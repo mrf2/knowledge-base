@@ -29,6 +29,28 @@ This is just branding and convenience
    * Key exchange
  * Does **not** define URLs, methods, content-type, routing, etc.
 
+## We cannot "see raw HTTPS messages"
+**There is no such thing as "raw HTTPS messages" we can type by hand.**
+
+### Why?
+Because:
+ * HTTPS = HTTP **inside** TLS
+ * TLS encrypts everything **after handshake**
+ * HTTP headers and body are:
+   * encrypted
+   * integrity-protected
+   * opaque on the wire
+
+So after TLS completes:
+```bash
+[encrypted bytes]
+```
+We cannot type:
+```bash
+GET / HTTP/1.1
+```
+and expect the server to understand it - unless the TLS layer encrypts it correctly.
+
 We can think of TLS as a **secure wrapper**.
 We can run **any protocol** over TLS, not only HTTP:
 ```

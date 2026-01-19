@@ -82,12 +82,12 @@ A sampler sends an actual HTTP request
  * Method: POST
  * URL: /api/login
  * Body:
-   ```
+```
 {
     "username" : "${username}",
     "password" : "${password}"
 }
-   ```
+```
 The ${username} and ${password} values come from the CSV file.
 
 **Why this step exists:**

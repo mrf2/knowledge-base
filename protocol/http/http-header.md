@@ -39,13 +39,20 @@ These are **claims made by the client:**
 
 #### Client and Context
 |Header|Meaning|
+|---|---|
 |`Host`|Target host (mandatory in HTTP/1.1)|
 |`User-Agent`|Client identity string|
-|`Referer`|Previous page|
+|`Content-Type||
+|`Accept||
+|`Authorization`|Client credentials|
 |`Origin`|Request origin (security-relevant)|
+|`Referer`|Previous page|
+|`Cookie`||
+Thes **decide wheter server like nginx lets us in**.
 
 #### Capability and Preference
 |Header|Meaning|
+|---|---|
 |`Accept`|Accepted media types|
 |`Accept-Encoding`|Compression support|
 |`Accept-Language`|Language preference|
@@ -74,5 +81,24 @@ These are **claims made by the client:**
 |`Content-Encoding`|Body encoding|
 |`Content-Language`|Body language|
 
-
 #### Control
+
+### Response Headers (server $\rightarrow$ client)
+Sent **by server** back to client
+
+|Header|Meaning|
+|---|---|
+|`Server||
+|`Set-Cookie`||
+|`Content-Type`||
+|`Cache-Control`||
+|`X-Frame-Options`||
+
+These tell:
+ * what server replied
+ * what security policies exist
+ * what cookie where issued
+
+**Response headers do NOT influence request acceptance**
+
+They'are informational *after access* is granted or denied.

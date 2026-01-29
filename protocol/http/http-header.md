@@ -42,8 +42,8 @@ These are **claims made by the client:**
 |---|---|
 |`Host`|Target host (mandatory in HTTP/1.1)|
 |`User-Agent`|Client identity string|
-|`Content-Type||
-|`Accept||
+|`Content-Type`||
+|`Accept`||
 |`Authorization`|Client credentials|
 |`Origin`|Request origin (security-relevant)|
 |`Referer`|Previous page|
@@ -88,7 +88,7 @@ Sent **by server** back to client
 
 |Header|Meaning|
 |---|---|
-|`Server||
+|`Server`||
 |`Set-Cookie`||
 |`Content-Type`||
 |`Cache-Control`||

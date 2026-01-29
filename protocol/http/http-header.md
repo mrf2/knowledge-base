@@ -74,8 +74,8 @@ Thes **decide wheter server like nginx lets us in**.
 |`Proxy-Authorization`|Proxy credentials|
 
 #### Content-related (for request body)
-|---|---|
 |Header|Meaning|
+|---|---|
 |`Content-Type`|Body format|
 |`Content-Length`|Body size|
 |`Content-Encoding`|Body encoding|

@@ -59,18 +59,8 @@ cut OPTION... [FILE]...
 
        -M     from first to M'th (included) byte, character or field
 
-AUTHOR
-       Written by David M. Ihnat, David MacKenzie, and Jim Meyering.
-
-REPORTING BUGS
-       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
-       Report any translation bugs to <https://translationproject.org/team/>
-
-COPYRIGHT
-       Copyright © 2023 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
-       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
-
-SEE ALSO
-       Full documentation <https://www.gnu.org/software/coreutils/cut>
-       or available locally via: info '(coreutils) cut invocation'
+## Example:
+```bash
+cut -d "." -f2 token | base64 -d | jq
 ```
+Here we decode JWT's payload in JSON format.

@@ -17,12 +17,54 @@ A **token** is a **server-issued artifact** that says, *If you trust me, you may
 Those properties are waht control **API behavior**.
 
 ### What problems tokens solve
+Before tokens:
+```bash
+username + password → every request
+```
+Problems:
+ * Password exposure
+ * No fine-grained control
+ * No expiry
+ * No delegation
+
+Token solve this by sperating:
+```bash
+Authentication → Authorization
+(login)          (API access) 
+```
 
 ### Two fundamental token models
 
 #### A) Opaque token (reference token)
+```bash
+Authorization: Bearer a83jfhbGciOiJIUz...
+```
+
+Characteristics:
+ * Meaningless string to the client
+ * Server looks it up in DB/cache
+ * All logic is server-side
+
+Server flow:
+```bash
+token → lookup → user → roles → permissions
+```
+Used by:
+ * Old OAuth servers
+ * Some enterprise systems
 
 #### B) Self-contained token (JWT)
+```bash
+xxxxx.yyyyy.zzzzz
+```
+Everything needed is **inside the token**
+
+**Server flow:***
+```bash
+verify signature → read claims → decide
+```
+
+No DB hit required (unless revoked)
 
 ### JWT anatomy
 A JWT has **three base64 parts**:

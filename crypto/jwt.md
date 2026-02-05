@@ -54,3 +54,32 @@ If we ever want to **replicate this manually (in C or low-level):**
  4. Apply the signing algorithm (e.g. `HMAC_SHA256` or `RSA_sign`).
  5. Base64URL encode the signature.
  6. Combine all three sections.
+
+## Typical server-side logic
+```bash
+1. Extract token from Authorization header
+2. Validate token (signature, expiry, issuer)
+3. Decode claims
+4. Check:
+   - role?
+   - permission?
+   - org binding?
+5. Allow or deny
+```
+### HTTP status
+|Status|Meaning|
+|---|---|
+|401|Token invalid/expired|
+|403|Token valid, **not allowed**|
+|404|API hidden for role (sometimes)|
+
+## Different token types
+Some systems issue **different tokens** for different purposes:
+|Token Type|Intended Use|
+|---|---|
+|Access token|Call APIs|
+|Refresh token|Get new access token|
+|Admin token|Admin-only APIs|
+|Service token|Internal services|
+
+

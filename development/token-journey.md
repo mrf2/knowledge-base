@@ -154,7 +154,8 @@ Same Bearer header
 So the system **limits blast radious**
 
 ### Strict Rule
-> **APIs must NEVER accept refresh tokens**
+> **APIs must NEVER accept refresh tokens**. 
+> **Business/resource APIs never accept refresh tokens. Only auth/token endpoints do.**
 
 **If an API accepts a refresh token → security bug**
 

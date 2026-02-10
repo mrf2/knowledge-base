@@ -7,3 +7,5 @@ Before entering code, go to input mode by pressing `Ctr+Shit+u`:
 |✓|Light Tick Mark|u2713|
 |✔|Heavy Tick Mark|u2714|
 |✘|Heavy Ballot X|u2718|
+|≠|Not Equal To|u2260|
+

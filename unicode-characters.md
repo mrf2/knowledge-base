@@ -9,3 +9,10 @@ Before entering code, go to input mode by pressing `Ctr+Shit+u`:
 |✘|Heavy Ballot X|u2718|
 |≠|Not Equal To|u2260|
 
+
+## Box Drawing Characters
+|Character|Code|Remarks|
+|---|---|---|
+|─|u2500|u2501|
+|└|u2514|u2515, u2516, u2517 are of different thinkness|
+

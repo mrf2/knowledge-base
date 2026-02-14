@@ -159,3 +159,12 @@ Because:
  * We simulate real browser behavior
  * We avoid artificial refresh storms
  * We keep token lifecycle realistic
+
+## Important Difference
+|Component|Purpose|
+|---|---|
+|Thread Group|Creates users|
+|Ramp-up|Controls how fast users start|
+|Once Only Controller|Runs something once per user|
+|Loop Controller|Repeats business actions|
+

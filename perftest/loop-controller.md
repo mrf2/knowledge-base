@@ -16,3 +16,21 @@ Inside that, put:
 Add business APIs
 ```
 
+## Example
+Assume:
+ * User logs in once
+ * Then browses 20 pages
+
+Structure:
+```bash
+Thread Group
+ ├── Once Only Controller
+ │      └── Login
+ ├── Loop Controller (Loop Count = 20)
+ │      ├── API Call 1
+ │      ├── API Call 2
+ │      └── API Call 3
+```
+**Each user:**
+ 1. Logs in once
+ 2. Repeats business APIs 20 times

@@ -1,11 +1,73 @@
 # JMeter - Thread Group
+A **Thread Group is just a container**.
+It is NOT:
+ * A super-thread
+ * A scheduler
+ * A memory pool
+ * A hidden execution engine
+ * A nested loop
+ * A stack frame manager
 
-In JMeter, a **Thread Group ≠ performance level**
+It is simply:
+> A configuration block that tells JMeter how many threads to create and how they should behave.
 
-A **Thread Group = one user behavior profile**
+In JMeter, 
+ * A **Thread Group ≠ performance level**
+ * A **Thread Group ≠ Execution Egine**
+ * A **Thread Group = one user behavior profile**
+ * A **Thread Group = Thread Factory + Configuration**
 
 Each thread group answer this question:
 > "What kind of users exist, and how do they behave?"
+
+## What Happens Internally
+When we press **Start**:
+ 1. JMeter reads Thread Group configuration
+ 2. It creates N Java threads
+ 3. Each thread executes the same child test elements independently
+
+So:
+```bash
+Thread Group
+   ├── HTTP Request
+   ├── Controller
+   ├── Timers
+   └── Assertions
+```
+Each thread runs that tree independently.
+
+The Thread Goup itself does NOT execute anything
+
+It just says:
+ * How many threads?
+ * Ramp-up time?
+ * Loop count?
+ * Duration?
+
+## The Hierarchy
+```bash
+Test Plan
+   ├── Thread Group 1
+   │       ├── Elements executed by threads
+   │
+   ├── Thread Group 2
+   │       ├── Different behavior
+```
+ * Thread Groups are parallel containers
+ * Each group creates its own threads
+ * They do NOT nest
+ * They do NOT coordinate
+ * They do NOT wait for each other (unless special settins).
+
+## Example
+**If we define:**
+Thread Group A → 3 Threads
+Thread Group B → 2 Threads
+
+**JMeter creates:**
+5 total threads
+ * All run concurrently
+ * Each group manages its own threads only
 
 
 ## How Thread Group constructed
@@ -93,4 +155,5 @@ Calculate **users, not thread groups:**
  * Think time
  * Ramp-up
  * Test duration
+
 
